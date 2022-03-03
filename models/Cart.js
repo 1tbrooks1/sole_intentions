@@ -4,10 +4,16 @@ const sequelize = require('../config/connection');
 class Cart extends Model {}
 
 Cart.init({
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+      },
     user: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'User',
+            model: 'user',
             key: 'id'
         }
     },
@@ -21,12 +27,17 @@ Cart.init({
         {
             shoe: {
                 references: {
-                    model: 'Shoe',
+                    model: 'shoe',
                     key: 'id'
                 }
             }
         }
-    ]
+    ],
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'cart',
 });
     
 

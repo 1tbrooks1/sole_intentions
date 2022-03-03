@@ -1,6 +1,14 @@
 const User = require('./User');
 const Shoe = require('./Shoe');
-//const Cart = require('./Cart');
+const Cart = require('./Cart');
+
+Cart.belongsTo(User, {
+    foreignKey: 'user'
+});
+
+User.hasOne(Cart, {
+    foreignKey: 'cart'
+});
 
 // User has one cart
 // Cart has one user
