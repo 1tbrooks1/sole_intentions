@@ -28,7 +28,7 @@ router.get('/shoe/:id', async (req, res) => {
       attributes: ['id', 'name', 'price', 'picture', 'description'],
     });
     //unsure on below
-    const shoe = dbShoeData.get({ plain: true });
+    const shoe = await dbShoeData.get({ plain: true });
     res.render('single-item', {
       shoe,
       loggedIn: req.session.loggedIn,
@@ -47,6 +47,5 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-// above copied from previous
 
 module.exports = router;
