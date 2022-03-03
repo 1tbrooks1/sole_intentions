@@ -34,6 +34,14 @@ User.init(
       validate: {
         len: [4],
       },
+    address: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    cc: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
     },
   },
   {
