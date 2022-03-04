@@ -1,26 +1,27 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Cart extends Model {}
+class CartItem extends Model {}
 
-Cart.init({
+CartItem.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
-      },
-    user_id: {
+    },
+    cart_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'user',
+            model: 'cart',
             key: 'id'
         }
     },
-    quantity: {
+    shoe_id: {
         type: DataTypes.INTEGER,
-        validate: {
-            len: [1]
+        references: {
+            model: 'shoe',
+            key: 'id'
         }
     }},
     {
@@ -28,14 +29,9 @@ Cart.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'cart',
+    modelName: 'cart_item',
     }
 );
     
 
-// array of items (with id, qty, price, whatever else)
-// total qty
-// total cost
-// owner (user id - references user Model)
-
-module.exports = Cart;
+module.exports = CartItem;
