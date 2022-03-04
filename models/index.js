@@ -19,4 +19,4 @@ User.hasOne(Cart, {
 // User model needs FK for Cart
 // Cart model needs FK for User (it's owner)
 
-module.exports = { User, Shoe };
+module.exports = { User, Shoe, Cart };
