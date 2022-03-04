@@ -3,11 +3,11 @@ const Shoe = require('./Shoe');
 const Cart = require('./Cart');
 
 Cart.belongsTo(User, {
-    foreignKey: 'user'
+  foreignKey: 'user',
 });
 
 User.hasOne(Cart, {
-    foreignKey: 'cart'
+  foreignKey: 'cart',
 });
 
 // User has one cart
@@ -19,4 +19,4 @@ User.hasOne(Cart, {
 // User model needs FK for Cart
 // Cart model needs FK for User (it's owner)
 
-module.exports = { User, Shoe };
+module.exports = { User, Shoe, Cart };
