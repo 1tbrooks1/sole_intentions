@@ -6,13 +6,13 @@
         <div class="col-9">
             {{#each shoes}}
             <div class="card text-dark">
-                <img class="card-img-top" src="../public/images/{{this.filename}}">
+                <img class="card-img-top" src="/images/{{this.filename}}">
                 <div class="card-body">
                     <h2 class="card-title">{{this.name}}</h2>
-                    <p class="card-text">${{this.price}}</p>
+                    <p class="card-text text-muted">${{this.price}}</p>
                 </div>
                 <div class="card-footer">
-                    <a href="/api/shoe:{{this.id}}">See More  <i class="fas fa-angle-double-right"></i></a>
+                    <a href="/shoe/:{{this.id}}">See More  <i class="fas fa-angle-double-right"></i></a>
                 </div>
             </div>
             {{/each}}
