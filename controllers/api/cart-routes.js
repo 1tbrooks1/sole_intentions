@@ -17,13 +17,9 @@ router.get('/cart', withAuth, async (req, res) => {
       where: {
         user_id: req.session.user_id,
       },
-      attributes: {
-        //??
-      },
-      include: [
-        //??
-      ],
-    });
+      attributes: ['name', 'price', 'size'],
+      include: [Shoe],
+    }); // which handlebars page do we res.render for this?
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
