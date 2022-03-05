@@ -5,7 +5,7 @@ const { Shoe, User } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
-      attributes: ['id', 'name', 'price', 'picture'],
+      attributes: ['id', 'name', 'price', 'filename'],
     });
     res.json(dbShoeData);
   } catch (err) {
@@ -20,7 +20,7 @@ router.get('/shoe/:id', async (req, res) => {
       where: {
         id: req.params.id,
       },
-      attributes: ['id', 'name', 'price', 'picture', 'description'],
+      attributes: ['id', 'name', 'price', 'filename', 'description'],
     });
     res.json(dbShoeData);
   } catch (err) {
