@@ -20,7 +20,7 @@ Shoe.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     filename: {
       type: DataTypes.STRING,
