@@ -7,7 +7,7 @@ const shoeData = [
         description: `The Atmos x Air Max 1 'Safari' is a 2016 re-release of a classic 2002 collaboration 
         with Japanese brand Atmos. The reissue features the same color-blocking as the original but swaps 
         out the 2002s canvas toe box and gum sole for a hairy suede toe box and ice-blue translucent sole.`,
-        filename: 'Atmos Safari.jpg'
+        filename: 'Atmos-Safari.jpg'
     },
     {
         name: 'Adidas Yeezy Boost 350 V2 Beluga',
@@ -18,7 +18,7 @@ const shoeData = [
         that has made it the go-to sneaker for everyone from celebrities like Kim Kardashian-West, 
         Jay-Z, 2 Chainz and Future, as well as for athletes like Nick "Swaggy P" Young, Andrew Wiggins, 
         Lewis Hamilton and anyone else who can get their feet in a pair.`,
-        filename: 'Beluga 2.0.jpg'
+        filename: 'Beluga-2.jpg'
     },
     {
         name: 'Air Jordan 1 x SB LA to Chicago',
@@ -26,7 +26,7 @@ const shoeData = [
         description: `This AJ 1 SB comes with a white upper plus blue and yellow accents, 
         yellow Nike "Swoosh", white midsole, and a black sole. Underneath the purple and yellow coloring
         you can find some other colors, but only when the paint is irritated. GET TO SKATING!!!`,
-        filename: 'La To Chi.jpg'
+        filename: 'La-To-Chi.jpg'
     },
     {
         name: 'Air Jordan 1 x Off White UNC ',
@@ -35,7 +35,7 @@ const shoeData = [
         This sneakers pays homage to the glory days of Jordan in college at UNC. 
         The sneakers come in a white, dark powder blue and cone colorway, with 
         a white and blue deconstructed leather upper and Off-White detailing throughout.`,
-        filename: 'Off White UNC.jpg'
+        filename: 'Off-White-UNC.jpg'
     },
     {
         name: 'Nike Air Max 1 x Parra',
@@ -46,7 +46,7 @@ const shoeData = [
         landscape imagery, applying it to the Air Max's iconic silhouette. 
         Using his traditional color palette of white, light blue, red, grey, 
         and pink, this pair is sure to turn heads with its unique and vibrant style.`,
-        filename: 'Parra AM1.jpg'
+        filename: 'Parra-AM1.jpg'
     },
     {
         name: 'Air Jordan 1 Rookie of the Year',
@@ -101,7 +101,7 @@ const shoeData = [
         of the curve, as chunkier sneakers became more en vogue in 2018. The shoe features an upper with 
         grey and black suede overlays, premium leather with blue mesh underlays, neon green laces, and its 
         signature chunky midsole with encapsulated Boost technology.`,
-        filename: 'Wave Runner.jpg'
+        filename: 'Wave-Runner.jpg'
     },
     {
         name: 'Adidas Yeezy Boost 350 V2 Zebra',
