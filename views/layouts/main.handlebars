@@ -13,24 +13,24 @@
 
 <body>
   <div class="wrapper">
-    <header class="bg-dark">
+    <header class="bg-dark pl-3 py-2">
       <h1>
         <a class="text-white" href="/">Sole Intentions</a>
       </h1>
       <nav>
-        <a href="/"><i class="fa-solid fa-house"></i></a>
+        <a href="/"><i class="fas fa-home icon"></i></a>
+        <a href="/cart"><i class="fas fa-shopping-cart icon"></i></a>
         {{#if loggedIn}}
-        <button id="logout" class="btn-no-style"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+        <button id="logout" class="btn-no-style"><i class="fas fa-sign-out-alt"></i></button>
         {{else}}
-        <a href="/login"><i class="fa-solid fa-user"></i></a>
+        <a href="/login"><i class="fas fa-solid fa-user icon"></i></a>
         {{/if}}
-        <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
       </nav>
     </header>
     <main>
       {{{ body }}}
     </main>
-    <footer>
+    <footer class="bg-dark text-white pl-3 py-1">
       Thanks for visiting! Contact Us: <a href="mailto:customerservice@soleintentions.com">customerservice@soleintentions.com</a>
     </footer>
   </div>

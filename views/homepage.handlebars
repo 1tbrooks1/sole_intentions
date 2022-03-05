@@ -4,10 +4,18 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-9">
-            {{#each shoe}}
+            {{#each shoes}}
             <div class="card text-dark">
-                <img class="card-img-top" src=""
+                <img class="card-img-top" src="/images/{{this.filename}}">
+                <div class="card-body">
+                    <h2 class="card-title">{{this.name}}</h2>
+                    <p class="card-text text-muted">${{this.price}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/shoe/:{{this.id}}">See More  <i class="fas fa-angle-double-right"></i></a>
+                </div>
             </div>
+            {{/each}}
         </div>
     </div>
 </div>

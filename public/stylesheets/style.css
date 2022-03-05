@@ -1,6 +1,18 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.icon {
+    color: white;
+    width: 50px;
+}
+
 .hero {
     background-image: url('../images/hero-img.png');
-    height: 200px;
+    height: 400px;
     background-size: cover;
     background-position: center;
     position: relative;
