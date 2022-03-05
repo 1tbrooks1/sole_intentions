@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
       attributes: ['id', 'name', 'price', 'filename'],
     });
     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
-    // unsure on above and below ^v
+
     res.render('homepage', {
       shoes,
       loggedIn: req.session.loggedIn,
@@ -27,7 +27,6 @@ router.get('/shoe/:id', async (req, res) => {
       },
       attributes: ['id', 'name', 'price', 'filename', 'description'],
     });
-    //unsure on below
     const shoe = await dbShoeData.get({ plain: true });
     res.render('single-item', {
       shoe,
