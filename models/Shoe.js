@@ -19,12 +19,12 @@ Shoe.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
+    description: {
+      type: DataTypes.STRING,
+    },
     filename: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
     },
   },
   {
