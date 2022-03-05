@@ -22,6 +22,10 @@ Shoe.init(
     description: {
       type: DataTypes.STRING,
     },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,
