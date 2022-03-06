@@ -2,6 +2,10 @@
     --primary-font: "share", cursive;
 }
 
+html, body {
+    overflow-x: hidden !important;width: 100vw !important;
+}
+
 header {
     display: flex;
     justify-content: space-between;
