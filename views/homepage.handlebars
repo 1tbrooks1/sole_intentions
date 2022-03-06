@@ -1,21 +1,34 @@
-<div class='hero'></div>
+<hero class='hero m-4'>
+    <h1 class="grab text-dark">Oh Snap!</h1>
+    <p class="promo bg-dark p-5 text-center">
+        Get FREE SHIPPING on any order now through 03/31/2022 </br>
+        Use PROMO Code: SHIPSNEAKIES at checkout!
+    </p>
+    <p class="barcode text-dark">SHOP SMALL. SHOP SOLE INTENTIONS.</p>
+</hero>
 
-<div class="container">
+<div class="container m-4">
     <div class="row">
-        <div class="col-3"></div>
-        <div class="col-9">
-            {{#each shoes}}
-            <div class="card text-dark">
-                <img class="card-img-top" src="/images/{{this.filename}}">
-                <div class="card-body">
-                    <h2 class="card-title">{{this.name}}</h2>
-                    <p class="card-text text-muted">${{this.price}}</p>
-                </div>
-                <div class="card-footer">
-                    <a href="/shoe/{{this.id}}">See More  <i class="fas fa-angle-double-right"></i></a>
+        <div class="col-2 border rounded">
+            <h2>Filter:</h2>
+        </div>
+        <div class="col-10 border rounded">
+            <div class="container">
+                <div class="row justify-content-between">
+                    {{#each shoes}}
+                    <div class="card p-0 m-2 col-3">
+                        <img class="card-img-top shoe-img" src="/images/{{this.filename}}">
+                        <div class="card-body">
+                            <h2 class="card-title shoe-name">{{this.name}}</h2>
+                            <p class="card-text text-muted">${{this.price}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/shoe/{{this.id}}">See More <i class="fas fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                    {{/each}}
                 </div>
             </div>
-            {{/each}}
         </div>
     </div>
 </div>
