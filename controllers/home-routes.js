@@ -28,6 +28,57 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/limit=8', async (req, res) => {
+  try {
+    const dbShoeData = await Shoe.findAll({
+      limit: 8,
+      attributes: ['id', 'price', 'name', 'filename'],
+    });
+    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
+    res.render('homepage', {
+      shoes,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/limit=12', async (req, res) => {
+  try {
+    const dbShoeData = await Shoe.findAll({
+      limit: 12,
+      attributes: ['id', 'price', 'name', 'filename'],
+    });
+    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
+    res.render('homepage', {
+      shoes,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/limit=24', async (req, res) => {
+  try {
+    const dbShoeData = await Shoe.findAll({
+      limit: 24,
+      attributes: ['id', 'price', 'name', 'filename'],
+    });
+    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
+    res.render('homepage', {
+      shoes,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/sort=priceDesc', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
@@ -128,24 +179,6 @@ router.get('/shoe/:id', async (req, res) => {
     const shoe = dbShoeData.get({ plain: true });
     res.render('single-item', {
       shoe,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-// this doesn't work still
-router.get('/limit=6', async (req, res) => {
-  try {
-    const dbShoeData = await Shoe.findAll({
-      limit: 6,
-      attributes: ['id', 'price', 'name', 'filename'],
-    });
-    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
-    res.render('homepage', {
-      shoes,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
