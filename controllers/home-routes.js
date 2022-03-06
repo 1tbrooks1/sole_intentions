@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Shoe } = require('../models');
-const withAuth = require('../utils/auth');
+const { Shoe, User } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
@@ -18,6 +17,15 @@ router.get('/', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+});
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
 });
 
 router.get('/sort=priceDesc', async (req, res) => {
@@ -128,7 +136,7 @@ router.get('/shoe/:id', async (req, res) => {
   }
 });
 
-// this doesn't work
+// this doesn't work still
 router.get('/limit=6', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
@@ -144,38 +152,6 @@ router.get('/limit=6', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-});
-
-router.get('/cart', async (req, res) => {
-  try {
-    const dbCartData = await Shoe.findAll({
-      where: { in_cart: 1 },
-      attributes: ['id', 'price', 'name', 'filename', 'in_cart'],
-    });
-    console.log(dbCartData);
-    const shoes = dbCartData.map((shoe) => shoe.get({ plain: true }));
-    res.render('cart', {
-      shoes,
-      loggedIn: req.session.loggedIn,
-    });
-    if (!dbCartData) {
-      res.render('cart', {
-        loggedIn: req.session.loggedIn,
-      });
-    }
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
 });
 
 module.exports = router;
