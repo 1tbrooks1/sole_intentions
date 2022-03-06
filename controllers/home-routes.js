@@ -27,11 +27,11 @@ router.get('/shoe/:id', async (req, res) => {
       },
       attributes: ['id', 'name', 'price', 'filename', 'description'],
     });
-    const shoe = await dbShoeData.get({ plain: true });
-    res.render('single-item', {
-      shoe,
-      loggedIn: req.session.loggedIn,
-    });
+    const shoe = dbShoeData.get({ plain: false });
+      res.render('single-item', {
+        shoe,
+        loggedIn: req.session.loggedIn,
+      });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

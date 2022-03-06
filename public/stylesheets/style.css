@@ -20,3 +20,7 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+.single-shoe {
+    max-width: 100%;
+}
