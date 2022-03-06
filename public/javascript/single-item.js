@@ -5,8 +5,6 @@ async function addCart(event) {
         window.location.toString().split('/').length - 1
     ];
 
-    console.log(id)
-
     const response = await fetch('/api/shoe/add/' + id, {
         method: 'PUT',
         body: JSON.stringify({
