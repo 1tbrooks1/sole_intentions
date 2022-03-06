@@ -60,3 +60,8 @@ header {
 .shoe-name {
     font-size: 20px;
 }
+
+footer {
+    font-family: var(--primary-font);
+    font-size: 20px;
+}
