@@ -1,15 +1,16 @@
-<div class="container">
-    <div class="row">
-        <div class="col-4">
+<div class="container-fluid m-4 single-font">
+    <div class="row justify-content-around">
+        <div class="col-md-3 border rounded p-0">
             <img class="single-shoe" src="/images/{{shoe.filename}}">
         </div>
-        <div class="col-5 border rounded">
-            <h2>{{shoe.name}}</h2>
-            <p>Description: </br> </br>{{shoe.description}}</p>
+        <div class="col-md-4 p-3 border rounded">
+            <h2 class="border-bottom">{{shoe.name}}</h2>
+            <p>Release Year: {{shoe.year}}</p>
+            <p>{{shoe.description}}</p>
         </div>
-        <div class="col-3 border rounded">
-            <h3>Select a size:</h3>
-            <select class="form-select m-1 p-1 col-12" id="size" aria-label="Default select example">
+        <div class="col-md-2 p-3 mr-5 border rounded">
+            <h3>Select a Size:</h3>
+            <select class="form-select mb-4 p-1 col-12" id="size" aria-label="Default select example">
                 <option selected>Size</option>
                 <option value="7">7</option>
                 <option value="8">8</option>
@@ -19,12 +20,12 @@
                 <option value="12">12</option>
                 <option value="13">13</option>
             </select>
-            <ul>
+            <ul class="border-bottom mb-4">
                 <li>Ships in 3-5 business days</li>
                 <li>Satisfaction Guaranteed</li>
                 <li>30-day returns with proof of purchase</li>
             </ul>
-            <button class="btn btn-info" id="cart-button" type="button">Add to Cart</button>
+            <button class="btn btn-info col-12" id="cart-button" type="button">Add to Cart</button>
         </div>
     </div>
 </div>

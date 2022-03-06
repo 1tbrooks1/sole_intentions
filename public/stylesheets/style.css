@@ -63,6 +63,10 @@ header {
     max-width: 100%;
 }
 
+.single-font {
+    font-family: var(--primary-font);
+}
+
 .home-text {
     font-family: var(--primary-font);
 }

@@ -123,7 +123,7 @@ router.get('/shoe/:id', async (req, res) => {
       where: {
         id: req.params.id,
       },
-      attributes: ['id', 'name', 'price', 'filename', 'description'],
+      attributes: ['id', 'name', 'price', 'filename', 'description', 'year'],
     });
     const shoe = dbShoeData.get({ plain: true });
     res.render('single-item', {
