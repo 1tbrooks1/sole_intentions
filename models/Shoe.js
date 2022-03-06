@@ -26,6 +26,10 @@ Shoe.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    in_cart: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   },
   {
     sequelize,

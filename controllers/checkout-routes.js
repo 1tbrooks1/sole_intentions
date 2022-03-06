@@ -1,28 +1,19 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Shoe, User, Cart, CartItem } = require('../models');
+const { Shoe } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    const dbCartData = await Cart.findAll({
-      where: {
-        id: req.session.id,
-      },
-      attributes: ['id', 'quantity'],
-      include: [
-        {
-          model: CartItem,
-          attributes: ['id', 'shoe_id'],
-        },
-        {
-          model: Shoe,
-          attributes: ['id', 'name', 'price', 'filename'],
-        },
-      ],
+    const dbCartData = await Shoe.findAll({
+      where: { in_cart: true },
+      attributes: ['id', 'price', 'name', 'filename'],
     });
-    const cart = await dbCartData.get({ plain: true });
-    res.render('cart', { cart, loggedIn: true });
+    const shoes = dbCartData.map((shoe) => shoe.get({ plain: true }));
+    res.render('cart', {
+      shoes,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

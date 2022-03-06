@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Shoe, User } = require('../models');
+const { Shoe, User, Cart } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
@@ -27,7 +28,7 @@ router.get('/shoe/:id', async (req, res) => {
       },
       attributes: ['id', 'name', 'price', 'filename', 'description'],
     });
-    const shoe = await dbShoeData.get({ plain: true });
+    const shoe = dbShoeData.get({ plain: true });
     res.render('single-item', {
       shoe,
       loggedIn: req.session.loggedIn,
