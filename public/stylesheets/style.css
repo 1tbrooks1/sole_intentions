@@ -56,11 +56,19 @@ header {
     max-width: 100%;
 }
 
-.shoe-body {
+.home-text {
     font-family: var(--primary-font);
+}
+
+.shoe-body {
     font-size: 15px;
 }
 
 .shoe-name {
+    font-size: 20px;
+}
+
+footer {
+    font-family: var(--primary-font);
     font-size: 20px;
 }
