@@ -18,17 +18,16 @@ header {
     font-size: 50px;
 }
 
-.icon {
-    color: white;
-    width: 75px;
-}
-
-.btn-no-style {
+.no-style {
     background: none;
     border: none;
     cursor: pointer;
     text-decoration: none;
     color: white;
+}
+
+.modal {
+    font-family: var(--primary-font);
 }
 
 .hero {
