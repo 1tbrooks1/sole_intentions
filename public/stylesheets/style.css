@@ -1,0 +1,62 @@
+:root {
+    --primary-font: "share", cursive;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.title {
+    font-family: "racing sans one", cursive;
+    font-size: 50px;
+}
+
+.icon {
+    color: white;
+    width: 75px;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('../images/hero-img.png');
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grab {
+    font-family: "racing sans one", cursive;
+    font-size: 100px;
+}
+
+.promo {
+    font-family: var(--primary-font);
+    font-size: 20px;
+    color: white
+}
+
+.barcode {
+    font-family: "Libre Barcode 128 Text", cursive;
+    font-size: 40px;
+}
+
+.single-shoe {
+    max-width: 100%;
+}
+
+.shoe-body {
+    font-family: var(--primary-font);
+    font-size: 15px;
+}
+
+.shoe-name {
+    font-size: 20px;
+}
