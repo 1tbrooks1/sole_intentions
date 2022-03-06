@@ -7,26 +7,82 @@
     <p class="barcode text-dark">SHOP SMALL. SHOP SOLE INTENTIONS.</p>
 </hero>
 
-<div class="container-fluid m-4">
+<div class="container-fluid m-4 home-text">
     <div class="row justify-content-between">
-        <div class="col-md-2 border rounded">
+        <div class="col-md-2 border rounded p-3">
             <h2>Filter By:</h2>
+            <select class="form-select m-1 p-1 col-12" aria-label="Default select example">
+                <option selected>Brand</option>
+                <option value="1">Adidas</option>
+                <option value="2">Nike</option>
+                <option value="3">Jordan</option>
+            </select>
+            <select class="form-select m-1 p-1 col-12" aria-label="Default select example">
+                <option selected>Release Date</option>
+                <option value="1">2015</option>
+                <option value="2">2016</option>
+                <option value="3">2017</option>
+                <option value="4">2018</option>
+                <option value="5">2019</option>
+                <option value="6">2020</option>
+                <option value="7">2021</option>
+                <option value="8">2022</option>
+            </select>
+            <select class="form-select m-1 p-1 col-12" aria-label="Default select example">
+                <option selected>Price Range</option>
+                <option value="1">$0-$500</option>
+                <option value="2">$500-$1000</option>
+                <option value="3">$1000-$1500</option>
+                <option value="4">$1500-$2000</option>
+                <option value="5">$2000-$2500</option>
+            </select>
+            <div class="form-check ml-4 my-1 p-1">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Price: High to Low
+                </label>
+            </div>
+            <div class="form-check ml-4 my-1 p-1">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Price: Low to High
+                </label>
+            </div>
+            <div class="form-check ml-4 my-1 p-1">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Release Date: High to Low
+                </label>
+            </div>
+            <div class="form-check ml-4 my-1 p-1">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Release Date: Low to High
+                </label>
+            </div>
+            <div class="form-check ml-4 my-1 p-1">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    None
+                </label>
+            </div>
         </div>
         <div class="col-md-9 mr-5">
-                <div class="row justify-content-between">
-                    {{#each shoes}}
-                    <div class="card p-0 m-2 col-md-3 shoe-body">
-                        <img class="card-img-top" src="/images/{{this.filename}}">
-                        <div class="card-body">
-                            <h2 class="card-title shoe-name text-dark">{{this.name}}</h2>
-                            <p class="card-text text-muted">${{this.price}}</p>
-                        </div>
-                        <div class="card-footer">
-                            <a class="text-dark" href="/shoe/{{this.id}}">See More <i class="fas fa-angle-double-right"></i></a>
-                        </div>
+            <div class="row justify-content-between">
+                {{#each shoes}}
+                <div class="card p-0 m-2 col-3 shoe-body">
+                    <img class="card-img-top" src="/images/{{this.filename}}">
+                    <div class="card-body">
+                        <h2 class="card-title shoe-name text-dark">{{this.name}}</h2>
+                        <p class="card-text text-muted">${{this.price}}</p>
                     </div>
-                    {{/each}}
+                    <div class="card-footer">
+                        <a class="text-dark" href="/shoe/{{this.id}}">See More <i
+                                class="fas fa-angle-double-right"></i></a>
+                    </div>
                 </div>
+                {{/each}}
+            </div>
         </div>
     </div>
 </div>

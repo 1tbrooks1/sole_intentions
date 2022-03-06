@@ -18,9 +18,16 @@ header {
     font-size: 50px;
 }
 
-.icon {
+.no-style {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
     color: white;
-    width: 75px;
+}
+
+.modal {
+    font-family: var(--primary-font);
 }
 
 .hero {
@@ -56,11 +63,19 @@ header {
     max-width: 100%;
 }
 
-.shoe-body {
+.home-text {
     font-family: var(--primary-font);
+}
+
+.shoe-body {
     font-size: 15px;
 }
 
 .shoe-name {
+    font-size: 20px;
+}
+
+footer {
+    font-family: var(--primary-font);
     font-size: 20px;
 }
