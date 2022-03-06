@@ -14,10 +14,10 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/:brand', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
-      where: { brand: req.body.brand },
+      where: { brand: req.params.brand },
       attributes: ['id', 'price', 'name', 'filename'],
     });
     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));

@@ -23,6 +23,10 @@ Shoe.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    year: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
     description: {
       type: DataTypes.TEXT,
     },

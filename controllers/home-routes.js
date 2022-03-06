@@ -19,6 +19,95 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/sort=priceDesc', async (req, res) => {
+  try {
+    const dbShoeData = await Shoe.findAll({
+      order: [['price', 'DESC']],
+      attributes: ['id', 'name', 'price', 'filename'],
+    });
+    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
+
+    res.render('homepage', {
+      shoes,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/sort=priceAsc', async (req, res) => {
+  try {
+    const dbShoeData = await Shoe.findAll({
+      order: [['price', 'ASC']],
+      attributes: ['id', 'name', 'price', 'filename'],
+    });
+    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
+
+    res.render('homepage', {
+      shoes,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/sort=yearDesc', async (req, res) => {
+  try {
+    const dbShoeData = await Shoe.findAll({
+      order: [['year', 'DESC']],
+      attributes: ['id', 'name', 'price', 'filename'],
+    });
+    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
+
+    res.render('homepage', {
+      shoes,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/sort=yearAsc', async (req, res) => {
+  try {
+    const dbShoeData = await Shoe.findAll({
+      order: [['year', 'ASC']],
+      attributes: ['id', 'name', 'price', 'filename'],
+    });
+    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
+
+    res.render('homepage', {
+      shoes,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/:year', async (req, res) => {
+  try {
+    const dbShoeData = await Shoe.findAll({
+      where: { year: req.params.year },
+      attributes: ['id', 'price', 'name', 'filename', 'year'],
+    });
+    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
+    res.render('homepage', {
+      shoes,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/shoe/:id', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findOne({
