@@ -25,7 +25,34 @@
                 <li>Satisfaction Guaranteed</li>
                 <li>30-day returns with proof of purchase</li>
             </ul>
+            {{#if loggedIn}}
             <button class="btn btn-info col-12" id="cart-button" type="button">Add to Cart</button>
+            {{else}}
+            <button type='button' class='btn btn-info col-12' data-toggle='modal' data-target='#exampleModal'>
+             Add to Cart
+            </button>
+            <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel'
+                aria-hidden='true'>
+                <div class='modal-dialog' role='document'>
+                    <div class='modal-content'>
+                        <div class='modal-header'>
+                            <h5 class='modal-title' id='exampleModalLabel'>Oops!</h5>
+                            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                <span aria-hidden='true'>&times;</span>
+                            </button>
+                        </div>
+                        <div class='modal-body'>
+                            Sorry! Please log in or sign-up to add items to your cart.
+                        </div>
+                        <div class='modal-footer'>
+                            <button type='button' class='btn btn-dark' data-dismiss='modal'>Close</button>
+                            <button type='button' class='btn btn-secondary'
+                                onclick="window.location.href='/login'">Login/Sign-Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
         </div>
     </div>
 </div>
