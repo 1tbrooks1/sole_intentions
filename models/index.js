@@ -1,23 +1,23 @@
 const User = require('./User');
 const Shoe = require('./Shoe');
-const Cart = require('./Cart');
-const CartItem = require('./CartItem');
+// const Cart = require('./Cart');
+// const CartItem = require('./CartItem');
 
-Cart.belongsTo(User, {
-  foreignKey: 'user_id',
-});
+// Cart.belongsTo(User, {
+//   foreignKey: 'user_id',
+// });
 
-User.hasOne(Cart, {
-  foreignKey: 'cart',
-});
+// User.hasOne(Cart, {
+//   foreignKey: 'cart',
+// });
 
-Cart.belongsToMany(Shoe, {
-  through: 'CartItem',
-});
+// Cart.belongsToMany(Shoe, {
+//   through: 'CartItem',
+// });
 
-Shoe.belongsToMany(Cart, {
-  through: 'CartItem',
-});
+// Shoe.belongsToMany(Cart, {
+//   through: 'CartItem',
+// });
 
 // User has one cart
 // Cart has one user
@@ -27,4 +27,4 @@ Shoe.belongsToMany(Cart, {
 // User model needs FK for Cart
 // Cart model needs FK for User (it's owner)
 
-module.exports = { User, Shoe, Cart, CartItem };
+module.exports = { User, Shoe };
