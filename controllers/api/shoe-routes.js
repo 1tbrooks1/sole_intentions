@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Shoe, User } = require('../../models');
+const { Shoe } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
@@ -8,6 +8,23 @@ router.get('/', async (req, res) => {
       attributes: ['id', 'name', 'price', 'filename', 'in_cart'],
     });
     res.json(dbShoeData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/', async (req, res) => {
+  try {
+    const dbShoeData = await Shoe.findAll({
+      where: { brand: req.body.brand },
+      attributes: ['id', 'price', 'name', 'filename'],
+    });
+    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
+    res.render('homepage', {
+      shoes,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
