@@ -81,5 +81,8 @@ header {
 
 footer {
     font-family: var(--primary-font);
-    font-size: 20px;
+    font-size: 13px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
 }
