@@ -1,38 +1,60 @@
-<div class="container">
-    <div class="row">
-        <div class="col-4">
+<div class="container-fluid m-4 single-font">
+    <div class="row justify-content-around">
+        <div class="col-md-3 border rounded p-0">
             <img class="single-shoe" src="/images/{{shoe.filename}}">
         </div>
-        <div class="col-5 border rounded">
-            <h2>{{shoe.name}}</h2>
-            <p>Description: </br> </br>{{shoe.description}}</p>
+        <div class="col-md-4 p-3 border rounded">
+            <h2 class="border-bottom">{{shoe.name}}</h2>
+            <p>Release Year: {{shoe.year}}</p>
+            <p>{{shoe.description}}</p>
         </div>
-        <div class="col-3 border rounded">
-            <h3>Select a size:</h3>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Size
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">7</a>
-                    <a class="dropdown-item" href="#">8</a>
-                    <a class="dropdown-item" href="#">9</a>
-                    <a class="dropdown-item" href="#">10</a>
-                    <a class="dropdown-item" href="#">11</a>
-                    <a class="dropdown-item" href="#">12</a>
-                    <a class="dropdown-item" href="#">13</a>
-                </div>
-            </div>
-            <p class="text-muted">Qty: 1</p>
-            <ul>
+        <div class="col-md-2 p-3 mr-5 border rounded">
+            <h3>Select a Size:</h3>
+            <select class="form-select mb-4 p-1 col-12" id="size" aria-label="Default select example">
+                <option selected>Size</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+            </select>
+            <ul class="border-bottom mb-4">
                 <li>Ships in 3-5 business days</li>
                 <li>Satisfaction Guaranteed</li>
                 <li>30-day returns with proof of purchase</li>
             </ul>
-            <button class="btn btn-info cart-button" type="button">Add to Cart</button>
+            {{#if loggedIn}}
+            <button class="btn btn-info col-12" id="cart-button" type="button">Add to Cart</button>
+            {{else}}
+            <button type='button' class='btn btn-info col-12' data-toggle='modal' data-target='#exampleModal'>
+             Add to Cart
+            </button>
+            <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel'
+                aria-hidden='true'>
+                <div class='modal-dialog' role='document'>
+                    <div class='modal-content'>
+                        <div class='modal-header'>
+                            <h5 class='modal-title' id='exampleModalLabel'>Oops!</h5>
+                            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                <span aria-hidden='true'>&times;</span>
+                            </button>
+                        </div>
+                        <div class='modal-body'>
+                            Sorry! Please log in or sign-up to add items to your cart.
+                        </div>
+                        <div class='modal-footer'>
+                            <button type='button' class='btn btn-dark' data-dismiss='modal'>Close</button>
+                            <button type='button' class='btn btn-secondary'
+                                onclick="window.location.href='/login'">Login/Sign-Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
         </div>
     </div>
 </div>
 
-<script src="/javascript/cart.js"></script>
+<script src="/javascript/single-item.js"></script>
