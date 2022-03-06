@@ -7,6 +7,7 @@ const shoeData = [
         description: `The Atmos x Air Max 1 'Safari' is a 2016 re-release of a classic 2002 collaboration 
         with Japanese brand Atmos. The reissue features the same color-blocking as the original but swaps 
         out the 2002s canvas toe box and gum sole for a hairy suede toe box and ice-blue translucent sole.`,
+        brand: 'Nike',
         filename: 'AtmosSafari.jpg'
     },
     {
@@ -18,6 +19,7 @@ const shoeData = [
         that has made it the go-to sneaker for everyone from celebrities like Kim Kardashian-West, 
         Jay-Z, 2 Chainz and Future, as well as for athletes like Nick "Swaggy P" Young, Andrew Wiggins, 
         Lewis Hamilton and anyone else who can get their feet in a pair.`,
+        brand: 'Adidas',
         filename: 'Beluga2.jpg'
     },
     {
@@ -26,6 +28,7 @@ const shoeData = [
         description: `This AJ 1 SB comes with a white upper plus blue and yellow accents, 
         yellow Nike "Swoosh", white midsole, and a black sole. Underneath the purple and yellow coloring
         you can find some other colors, but only when the paint is irritated. GET TO SKATING!!!`,
+        brand: 'Jordan',
         filename: 'LaToChi.jpg'
     },
     {
@@ -35,6 +38,7 @@ const shoeData = [
         This sneakers pays homage to the glory days of Jordan in college at UNC. 
         The sneakers come in a white, dark powder blue and cone colorway, with 
         a white and blue deconstructed leather upper and Off-White detailing throughout.`,
+        brand: 'Jordan',
         filename: 'OffWhiteUNC.jpg'
     },
     {
@@ -46,6 +50,7 @@ const shoeData = [
         landscape imagery, applying it to the Air Max's iconic silhouette. 
         Using his traditional color palette of white, light blue, red, grey, 
         and pink, this pair is sure to turn heads with its unique and vibrant style.`,
+        brand: 'Nike',
         filename: 'ParraAM1.jpg'
     },
     {
@@ -54,6 +59,7 @@ const shoeData = [
         description: `What better way to celebrate MJs rookie of the year award than clinching 
         the Jordan 1 Retro High Rookie of the Year. This unique shoe comes with a white and 
         harvest leather upper, black Nike “Swoosh”, white midsole, and a black sole.`,
+        brand: 'Jordan',
         filename: 'ROTY.jpg'
     },
     {
@@ -63,6 +69,7 @@ const shoeData = [
         rookie season, in the summer of 1985, when he played in an exhibition game in Italy. 
         Jordan, wearing the orange, black, and white of Stefanel Trieste, hit a dunk so hard 
         he shattered the glass backboard.`,
+        brand: 'Jordan',
         filename: 'SBB.jpg'
     },
     {
@@ -73,6 +80,7 @@ const shoeData = [
         with the help of lifestyle label Stussy. This Spridion Cage 2 consists of a mesh upper with 
         woven textile overlays and a black Swoosh. A caged Zoom Air unit, Stussy branding on the heel 
         and toe, and Fossil sole completes the design.`,
+        brand: 'Nike',
         filename: 'Spiridon.jpg'
     },
     {
@@ -81,6 +89,7 @@ const shoeData = [
         description: `Electrify your sneaker rotation with the adidas Yeezy Boost 350 V2 Static. 
         This Yeezy 350 V2 comes with a grey and white upper and a white sole. The see through upper helps
         you to show off the cool socks in you lost a long time ago.`,
+        brand: 'Adidas',
         filename: 'Static.jpg'
     },
     {
@@ -90,6 +99,7 @@ const shoeData = [
         Supreme Wheat features a Flax Durabuck upper with Supreme Box Logo insignias on the 
         lateral heels. At the base, a matching Flax Air sole completes the design. This model 
         was exclusively sold through Supreme stores and their online shops.`,
+        brand: 'Nike',
         filename: 'SupAF1.jpg'
     },
     {
@@ -101,6 +111,7 @@ const shoeData = [
         of the curve, as chunkier sneakers became more en vogue in 2018. The shoe features an upper with 
         grey and black suede overlays, premium leather with blue mesh underlays, neon green laces, and its 
         signature chunky midsole with encapsulated Boost technology.`,
+        brand: 'Adidas',
         filename: 'WaveRunner.jpg'
     },
     {
@@ -112,6 +123,7 @@ const shoeData = [
         off a Zebra stripe vibe, “SPLY-350” displayed across the sides in red finished off by a translucent 
         BOOST cushioned sole. To date they are the most limited adidas Yeezy release and have instantly become 
         one of the most popular colorways`,
+        brand: 'Adidas',
         filename: 'Zebras.jpg'
     },
 ]
