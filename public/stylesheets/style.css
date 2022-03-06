@@ -23,6 +23,14 @@ header {
     width: 75px;
 }
 
+.btn-no-style {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
 .hero {
     background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('../images/hero-img.png');
     height: 400px;
