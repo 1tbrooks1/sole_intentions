@@ -127,6 +127,24 @@ router.get('/shoe/:id', async (req, res) => {
   }
 });
 
+// this doesn't work
+router.get('/limit=6', async (req, res) => {
+  try {
+    const dbShoeData = await Shoe.findAll({
+      limit: 6,
+      attributes: ['id', 'price', 'name', 'filename'],
+    });
+    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
+    res.render('homepage', {
+      shoes,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');

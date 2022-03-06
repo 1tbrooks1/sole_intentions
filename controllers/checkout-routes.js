@@ -3,12 +3,13 @@ const sequelize = require('../config/connection');
 const { Shoe } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const dbCartData = await Shoe.findAll({
-      where: { in_cart: true },
-      attributes: ['id', 'price', 'name', 'filename'],
+      where: { in_cart: 1 },
+      attributes: ['id', 'price', 'name', 'filename', 'in_cart'],
     });
+    console.log(dbCartData);
     const shoes = dbCartData.map((shoe) => shoe.get({ plain: true }));
     res.render('cart', {
       shoes,

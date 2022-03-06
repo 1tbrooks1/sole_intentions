@@ -50,7 +50,7 @@ router.put('/add/:id', async (req, res) => {
   try {
     const dbShoeData = await Shoe.update(
       {
-        in_cart: true,
+        in_cart: 1,
       },
       {
         where: {
@@ -69,7 +69,7 @@ router.put('/remove/:id', async (req, res) => {
   try {
     const dbShoeData = await Shoe.update(
       {
-        in_cart: false,
+        in_cart: 0,
       },
       {
         where: {

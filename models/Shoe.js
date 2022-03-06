@@ -36,7 +36,7 @@ Shoe.init(
     },
     in_cart: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false,
+      defaultValue: 0,
     },
   },
   {
