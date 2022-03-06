@@ -1,35 +1,42 @@
-<div class="container my-4">
+<div class="container my-4 forms">
     <div class="row">
         <div class="col-6 border rounded p-3">
             <h2>Are You New Here? Join the Fam!</h2>
             <form>
                 <div class="form-row">
+                        <div class="form-group col-md-12">
+                        <label for="username-signup">Username</label>
+                        <input type="username" class="form-control" id="username-signup" placeholder="Username">
+                    </div>
+                </div>
+                <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        <label for="email-signup">Email</label>
+                        <input type="email" class="form-control" id="email-signup" placeholder="Email">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                        <label for="password-signup">Password</label>
+                        <input type="password" class="form-control" id="password-signup" placeholder="Password">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    <label for="address-signup">Address</label>
+                    <input type="text" class="form-control" id="address-signup" placeholder="1234 Main St">
                 </div>
                 <div class="form-group">
-                    <label for="inputAddress2">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2"
+                    <label for="address2-signup">Address 2</label>
+                    <input type="text" class="form-control" id="address2-signup"
                         placeholder="Apartment, studio, or floor">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
-                        <input type="text" class="form-control" id="inputCity">
+                        <label for="city-signup">City</label>
+                        <input type="text" class="form-control" id="city-signup"
+                        placeholder="City">
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="inputState">State</label>
-                        <select id="inputState" class="form-control">
+                        <label for="state-signup">State</label>
+                        <select id="state-signup" class="form-control">
                             <option selected>Choose...</option>
                             <option>Alabama</option>
                             <option>Alaska</option>
@@ -83,28 +90,29 @@
                         </select>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputZip">Zip</label>
-                        <input type="text" class="form-control" id="inputZip">
+                        <label for="zip-signup">Zip</label>
+                        <input type="text" class="form-control" id="zip-signup"
+                        placeholder="Zip">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="submit" class="btn btn-info signup-button">Sign Up</button>
             </form>
         </div>
         <div class="col-6 border rounded p-3">
-            <h2>Returning user? Log In!</h2>
+            <h2>Returning User? Log In!</h2>
             <form>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    <label for="email-login">Email address</label>
+                    <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp"
                         placeholder="Enter email">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                         else.</small>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="password-login">Password</label>
+                    <input type="password" class="form-control" id="password-login" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Log In</button>
+                <button type="submit" class="btn btn-info login-button">Log In</button>
             </form>
         </div>
     </div>
