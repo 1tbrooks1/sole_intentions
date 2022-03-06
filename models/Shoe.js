@@ -19,6 +19,10 @@ Shoe.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
+    brand: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     description: {
       type: DataTypes.TEXT,
     },
