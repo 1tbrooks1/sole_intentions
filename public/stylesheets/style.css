@@ -1,3 +1,7 @@
+:root {
+    --primary-font: "share", cursive;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -34,24 +38,25 @@ header {
 }
 
 .promo {
-    font-family: "lekton", sans-serif;
+    font-family: var(--primary-font);
     font-size: 20px;
     color: white
 }
 
 .barcode {
     font-family: "Libre Barcode 128 Text", cursive;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .single-shoe {
     max-width: 100%;
 }
 
-.shoe-name {
-    font-size: 20px;
+.shoe-body {
+    font-family: var(--primary-font);
+    font-size: 15px;
 }
 
-.shoe-img {
-    min-width: 100%;
+.shoe-name {
+    font-size: 20px;
 }
