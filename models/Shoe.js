@@ -23,6 +23,10 @@ Shoe.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    year: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
     description: {
       type: DataTypes.TEXT,
     },
@@ -32,7 +36,7 @@ Shoe.init(
     },
     in_cart: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false,
+      defaultValue: 0,
     },
   },
   {

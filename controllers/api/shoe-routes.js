@@ -14,10 +14,10 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/:brand', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
-      where: { brand: req.body.brand },
+      where: { brand: req.params.brand },
       attributes: ['id', 'price', 'name', 'filename'],
     });
     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
@@ -50,7 +50,7 @@ router.put('/add/:id', async (req, res) => {
   try {
     const dbShoeData = await Shoe.update(
       {
-        in_cart: true,
+        in_cart: 1,
       },
       {
         where: {
@@ -69,7 +69,7 @@ router.put('/remove/:id', async (req, res) => {
   try {
     const dbShoeData = await Shoe.update(
       {
-        in_cart: false,
+        in_cart: 0,
       },
       {
         where: {
