@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Shoe } = require('../../models');
+const { Shoe, CartItem, User } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
@@ -16,13 +16,22 @@ router.get('/', async (req, res) => {
 
 router.get('/cart', async (req, res) => {
   try {
-    const dbCartData = await Shoe.findAll({
-      where: { in_cart: 1 },
-      attributes: ['id', 'price', 'name', 'filename', 'in_cart'],
+    const dbCartData = await CartItem.findAll({
+      where: {
+        user_id: req.session.id,
+      },
+      include: [
+        {
+          model: Shoe,
+          attributes: ['id', 'price', 'name', 'filename'],
+        },
+      ],
     });
-    const shoes = dbCartData.map((shoe) => shoe.get({ plain: true }));
+    const cartItems = dbCartData.map((cartItem) =>
+      cartItem.get({ plain: true })
+    );
     res.render('cart', {
-      shoes,
+      cartItems,
       loggedIn: req.session.loggedIn,
     });
     if (!dbCartData) {
@@ -32,9 +41,31 @@ router.get('/cart', async (req, res) => {
     }
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res.status(err).json(err);
   }
 });
+
+// router.get('/cart', async (req, res) => {
+//   try {
+//     const dbCartData = await Shoe.findAll({
+//       where: { in_cart: 1 },
+//       attributes: ['id', 'price', 'name', 'filename', 'in_cart'],
+//     });
+//     const shoes = dbCartData.map((shoe) => shoe.get({ plain: true }));
+//     res.render('cart', {
+//       shoes,
+//       loggedIn: req.session.loggedIn,
+//     });
+//     if (!dbCartData) {
+//       res.render('cart', {
+//         loggedIn: req.session.loggedIn,
+//       });
+//     }
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get('/:brand', async (req, res) => {
   try {
@@ -68,38 +99,14 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.put('/add/:id', async (req, res) => {
+router.put('/addtocart/:id', async (req, res) => {
   try {
-    const dbShoeData = await Shoe.update(
-      {
-        in_cart: 1,
-      },
-      {
-        where: {
-          id: req.params.id,
-        },
-      }
-    );
-    res.json(dbShoeData);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-router.put('/remove/:id', async (req, res) => {
-  try {
-    const dbShoeData = await Shoe.update(
-      {
-        in_cart: 0,
-      },
-      {
-        where: {
-          id: req.params.id,
-        },
-      }
-    );
-    res.json(dbShoeData);
+    const dbCartItem = await CartItem.create({
+      user_id: req.session.id,
+      shoe_id: req.params.id,
+    });
+    console.log(dbCartItem);
+    res.json(dbCartItem);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

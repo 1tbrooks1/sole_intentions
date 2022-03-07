@@ -168,26 +168,6 @@ router.get('/:year', async (req, res) => {
   }
 });
 
-// This doesn't work
-// router.get('/priceLimit=500', async (req, res) => {
-//   try {
-//     const dbShoeData = await Shoe.findAll({
-//       where: {
-//         [price.between]: [0, 500],
-//       },
-//       attributes: ['id', 'price', 'name', 'filename', 'year'],
-//     });
-//     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
-//     res.render('homepage', {
-//       shoes,
-//       loggedIn: req.session.loggedIn,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
 router.get('/shoe/:id', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findOne({
