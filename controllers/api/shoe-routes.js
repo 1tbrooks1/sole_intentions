@@ -45,28 +45,6 @@ router.get('/cart', async (req, res) => {
   }
 });
 
-// router.get('/cart', async (req, res) => {
-//   try {
-//     const dbCartData = await Shoe.findAll({
-//       where: { in_cart: 1 },
-//       attributes: ['id', 'price', 'name', 'filename', 'in_cart'],
-//     });
-//     const shoes = dbCartData.map((shoe) => shoe.get({ plain: true }));
-//     res.render('cart', {
-//       shoes,
-//       loggedIn: req.session.loggedIn,
-//     });
-//     if (!dbCartData) {
-//       res.render('cart', {
-//         loggedIn: req.session.loggedIn,
-//       });
-//     }
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
 router.get('/:brand', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
@@ -104,6 +82,23 @@ router.put('/addtocart/:id', async (req, res) => {
     const dbCartItem = await CartItem.create({
       user_id: req.session.id,
       shoe_id: req.params.id,
+    });
+    console.log(dbCartItem);
+    res.json(dbCartItem);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// This doesn't work below ( Cannot GET /api/shoe/cart/removefromcart)
+router.put('/cart/removefromcart/:id', async (req, res) => {
+  try {
+    const dbCartItem = await CartItem.destroy({
+      where: {
+        user_id: req.session.id,
+        shoe_id: req.params.id,
+      },
     });
     console.log(dbCartItem);
     res.json(dbCartItem);
