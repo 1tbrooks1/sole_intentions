@@ -23,18 +23,24 @@
                 </div>
             </div>
             {{/each}}
+            <a class="btn btn-info btn-block btn-lg mt-4" href="/" role="button">Keep Shopping</a>
         </div>
         <div class="col-md-3">
             <div class="p-2">
                 <h4>Checkout</h4>
             </div>
             <div>
-                <button class="btn btn-warning btn-block btn-lg mt-4" type="button">Proceed to Checkout</button>
+                <form action="/create-checkout-session" method="POST">
+                    <button class="btn btn-warning btn-block btn-lg mt-4" type="submit">Proceed to Checkout</button>
+                </form>
             </div>
         </div>
         {{else}}
         <div class="d-flex flex-row justify-content-between align-items-center p-2 mt-4 px-3 border rounded">
             <h5>Your Cart is Empty!</h5>
+        </div>
+        <div class="d-flex flex-row justify-content-between align-items-center">
+            <a class="btn btn-info btn-block btn-lg mt-4" href="/" role="button">Start Shopping!</a>
         </div>
         {{/if}}
     </div>
