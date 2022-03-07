@@ -75,6 +75,10 @@ header {
     font-family: var(--primary-font);
 }
 
+.cart-font {
+    font-family: var(--primary-font);
+}
+
 .shoe-body {
     font-size: 15px;
 }

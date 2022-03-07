@@ -1,13 +1,67 @@
-<div class="container">
-    <div class="row justify-content-between">
-        {{#each shoes}}
-        <div class="card p-0 m-2 col-md-3 shoe-body">
-            <img class="card-img-top" src="/images/{{this.filename}}">
-            <div class="card-body">
-                <h2 class="card-title shoe-name text-dark">{{this.name}}</h2>
-                <p class="card-text text-muted">${{this.price}}</p>
+<div class="container-fluid m-4 cart-font">
+    <div class="row justify-content-evenly">
+        <div class="col-md-7">
+            <div class="p-2">
+                <h4>Shopping Cart</h4>
+            </div>
+            {{#if shoes.length}}
+            {{#each shoes}}
+            <div class="d-flex flex-row justify-content-between align-items-center p-2 mt-4 px-3 border rounded">
+                <div class="me-1">
+                    <img class="rounded" src="/images/{{this.filename}}" width="70">
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                    <p class="text-dark">{{this.name}}</p>
+                </div>
+                <div>
+                    <p class="text-muted">${{this.price}}</p>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button class="no-style remove-cart" value="{{this.id}}" id="remove" onclick="removeCart(event)">
+                        <i class="fa fa-trash mb-1 text-danger"></i>
+                    </button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="col-md-3">
+            <div class="p-2">
+                <h4>Checkout</h4>
+            </div>
+            <div>
+                <button class="btn btn-warning btn-block btn-lg mt-4" type="button">Proceed to Checkout</button>
             </div>
         </div>
-        {{/each}}
+        {{else}}
+        <div class="d-flex flex-row justify-content-between align-items-center p-2 mt-4 px-3 border rounded">
+            <h5>Your Cart is Empty!</h5>
+        </div>
+        {{/if}}
     </div>
 </div>
+
+{{#if shoes.length}}
+<script>
+    async function removeCart(event) {
+        event.preventDefault();
+
+        const id = document.querySelector('#remove').value.trim();
+
+        const response = await fetch('/api/shoe/remove/' + id, {
+            method: 'PUT',
+            body: JSON.stringify({
+                id: id
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            document.location.reload();
+        } else {
+            alert(response.statusText);
+        }
+    }
+</script>
+{{/if}}
