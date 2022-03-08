@@ -18,7 +18,7 @@ const shoeData = [
         Kanye West made famous for adidas Originals and gives it new life.
         The low top Yeezy Boost 350 features a full length Boost cushioning system and a high end feel 
         that has made it the go-to sneaker for everyone from celebrities like Kim Kardashian-West, 
-        Jay-Z, 2 Chainz and Future, as well as for athletes like Nick "Swaggy P" Young, Andrew Wiggins, 
+        Jay-Z, 2 Chainz and Future, as well as for athletes such as Nick "Swaggy P" Young, Andrew Wiggins, 
         Lewis Hamilton and anyone else who can get their feet in a pair.`,
     brand: 'Adidas',
     year: 2016,
