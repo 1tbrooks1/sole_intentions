@@ -91,7 +91,6 @@ router.put('/addtocart/:id', async (req, res) => {
   }
 });
 
-// This doesn't work below ( Cannot GET /api/shoe/cart/removefromcart)
 router.put('/cart/removefromcart/:id', async (req, res) => {
   try {
     const dbCartItem = await CartItem.destroy({

@@ -10,6 +10,8 @@ const shoeData = [
     brand: 'Nike',
     year: 2016,
     filename: 'AtmosSafari.jpg',
+    stripe_prod_id: 'prod_LH1bunB86Zy0A4',
+    stripe_price_id: 'price_1KaTXwDT393wRvxWAah2oY1Z',
   },
   {
     name: 'Adidas Yeezy Boost 350 V2 Beluga',
@@ -23,6 +25,8 @@ const shoeData = [
     brand: 'Adidas',
     year: 2016,
     filename: 'Beluga2.jpg',
+    stripe_prod_id: 'prod_LH1bvRSEvkLJNm',
+    stripe_price_id: 'price_1KaTYKDT393wRvxWX8bF31Hm',
   },
   {
     name: 'Air Jordan 1 x SB LA to Chicago',
@@ -33,6 +37,8 @@ const shoeData = [
     brand: 'Jordan',
     year: 2019,
     filename: 'LaToChi.jpg',
+    stripe_prod_id: 'prod_LH1b5riJ3YG0uV',
+    stripe_price_id: 'price_1KaTYjDT393wRvxWhswRyLW5',
   },
   {
     name: 'Air Jordan 1 x Off White UNC ',
@@ -44,6 +50,8 @@ const shoeData = [
     brand: 'Jordan',
     year: 2018,
     filename: 'OffWhiteUNC.jpg',
+    stripe_prod_id: 'prod_LH4VU1I5chJV4i',
+    stripe_price_id: 'price_1KaWMODT393wRvxWQqj9g0oJ',
   },
   {
     name: 'Nike Air Max 1 x Parra',
@@ -57,6 +65,8 @@ const shoeData = [
     brand: 'Nike',
     year: 2018,
     filename: 'ParraAM1.jpg',
+    stripe_prod_id: 'prod_LH4VdBkjQgYbPe',
+    stripe_price_id: 'price_1KaWMkDT393wRvxWdXh9zY6X',
   },
   {
     name: 'Air Jordan 1 Rookie of the Year',
@@ -67,6 +77,8 @@ const shoeData = [
     brand: 'Jordan',
     year: 2018,
     filename: 'ROTY.jpg',
+    stripe_prod_id: 'prod_LH4WdetYfXeysQ',
+    stripe_price_id: 'price_1KaWN8DT393wRvxWyj3DCHEI',
   },
   {
     name: 'Air Jordan 1 Shattered Backboard',
@@ -78,6 +90,8 @@ const shoeData = [
     brand: 'Jordan',
     year: 2015,
     filename: 'SBB.jpg',
+    stripe_prod_id: 'prod_LH4WWqDUBMghbY',
+    stripe_price_id: 'price_1KaWNVDT393wRvxWLW6ULrgi',
   },
   {
     name: 'Nike x Stussy Air Zoom Spiridon Fossil',
@@ -90,6 +104,8 @@ const shoeData = [
     brand: 'Nike',
     year: 2020,
     filename: 'Spiridon.jpg',
+    stripe_prod_id: 'prod_LH4WFJZC6hq36g',
+    stripe_price_id: 'price_1KaWNtDT393wRvxWYVKwtWov',
   },
   {
     name: 'Adidas Yeezy Boost 350 V2 Static',
@@ -100,6 +116,8 @@ const shoeData = [
     brand: 'Adidas',
     year: 2018,
     filename: 'Static.jpg',
+    stripe_prod_id: 'prod_LH4XuALinWdmfD',
+    stripe_price_id: 'price_1KaWOFDT393wRvxWLM0Yjlas',
   },
   {
     name: 'Nike Air Force 1 Low x Supreme Wheat',
@@ -111,6 +129,8 @@ const shoeData = [
     brand: 'Nike',
     year: 2021,
     filename: 'SupAF1.jpg',
+    stripe_prod_id: 'prod_LH4YJxZbpzzfsC',
+    stripe_price_id: 'price_1KaWP8DT393wRvxWYgEoTnOv',
   },
   {
     name: 'Adidas Yeezy Boost 700 Wave Runner',
@@ -124,6 +144,8 @@ const shoeData = [
     brand: 'Adidas',
     year: 2017,
     filename: 'WaveRunner.jpg',
+    stripe_prod_id: 'prod_LH4YfvwJsANcdE',
+    stripe_price_id: 'price_1KaWPTDT393wRvxW1VNawTZB',
   },
   {
     name: 'Adidas Yeezy Boost 350 V2 Zebra',
@@ -137,6 +159,8 @@ const shoeData = [
     brand: 'Adidas',
     year: 2017,
     filename: 'Zebras.jpg',
+    stripe_prod_id: 'prod_LH4YxhkXPvDHTv',
+    stripe_price_id: 'price_1KaWPrDT393wRvxW9KJe2SF6',
   },
 ];
 

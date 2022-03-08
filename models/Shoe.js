@@ -34,6 +34,12 @@ Shoe.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    stripe_prod_id: {
+      type: DataTypes.STRING,
+    },
+    stripe_price_id: {
+      type: DataTypes.STRING,
+    },
   },
   {
     sequelize,
