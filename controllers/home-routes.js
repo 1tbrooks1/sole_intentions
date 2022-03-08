@@ -32,14 +32,14 @@ router.post('/create-checkout-session', async (req, res) => {
   const cartItems = cartData.map((cartItem) => cartItem.get({ plain: true }));
   const shoeIds = cartItems.map((cartItem) => cartItem.shoe_id);
   const shoeData = await Shoe.findAll({
+    where: {
+      id: shoeIds,
+    },
     attributes: ['id', 'stripe_price_id'],
   });
   const shoes = shoeData.map((shoe) => shoe.get({ plain: true }));
-  //const cartShoes = shoes.filter((shoe) => shoe.id === ???needs to loop through second array with all the ids and grab what is ===);
-  console.log(cartShoes);
   console.log(shoes);
-  console.log(cartItems);
-  console.log(shoeIds);
+  // ^^^ THIS IS THE STRIPE PRICE ID OF EACH SHOE IN THE CART THAT WE JUST NEEED TO PLUG INTO THE LINE ITEMS BELOW
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
