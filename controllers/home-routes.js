@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Shoe, User } = require('../models');
+const { Shoe, User, CartItem } = require('../models');
 const stripe = require('stripe')(
   'sk_test_51KYkduDT393wRvxW2rJP7fKH7P7eZk3WEi2w4mt4vcK2N8pCuovVnd63lNBoAQQw17cpiRLAj5ExVooEVzhcMzab00m10g4G9X'
 );
@@ -23,6 +23,23 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/create-checkout-session', async (req, res) => {
+  const cartData = await CartItem.findAll({
+    where: {
+      user_id: req.session.id,
+    },
+    attributes: ['shoe_id'],
+  });
+  const cartItems = cartData.map((cartItem) => cartItem.get({ plain: true }));
+  const shoeIds = cartItems.map((cartItem) => cartItem.shoe_id);
+  const shoeData = await Shoe.findAll({
+    attributes: ['id', 'stripe_price_id'],
+  });
+  const shoes = shoeData.map((shoe) => shoe.get({ plain: true }));
+  //const cartShoes = shoes.filter((shoe) => shoe.id === ???needs to loop through second array with all the ids and grab what is ===);
+  console.log(cartShoes);
+  console.log(shoes);
+  console.log(cartItems);
+  console.log(shoeIds);
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {

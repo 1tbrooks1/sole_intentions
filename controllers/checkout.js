@@ -19,19 +19,3 @@ router.post('/create-checkout-session', async (req, res) => {
 });
 
 module.exports = router;
-
-// Shoe Model has references to prod and price ID's
-// need prod name, price id, and prod id passed to stripe
-// when stripe checkout session is created, how do we pull those values and insert them as line items
-// line_items: [
-//   {
-//     price_data: {
-//       currency: 'usd',
-//       product_data: {
-//         name: 'T-shirt',
-//       },
-//       unit_amount: 2000,
-//     },
-//     quantity: 1,
-//   },
-// ],

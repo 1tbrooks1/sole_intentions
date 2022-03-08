@@ -23,7 +23,7 @@ router.get('/cart', async (req, res) => {
       include: [
         {
           model: Shoe,
-          attributes: ['id', 'price', 'name', 'filename'],
+          attributes: ['id', 'price', 'name', 'filename', 'stripe_price_id'],
         },
       ],
     });
