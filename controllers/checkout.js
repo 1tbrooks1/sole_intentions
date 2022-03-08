@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Shoe, User, CartItem } = require('../models');
+//const { Shoe, User, CartItem } = require('../models');
 
 router.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
-        price: '{{PRICE_ID}}',
+        price: 'price_1KaTYKDT393wRvxWX8bF31Hm',
         quantity: 1,
       },
     ],

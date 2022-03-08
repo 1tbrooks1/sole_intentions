@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Shoe, User } = require('../models');
+const stripe = require('stripe')(
+  'sk_test_51KYkduDT393wRvxW2rJP7fKH7P7eZk3WEi2w4mt4vcK2N8pCuovVnd63lNBoAQQw17cpiRLAj5ExVooEVzhcMzab00m10g4G9X'
+);
 
 router.get('/', async (req, res) => {
   try {
@@ -17,6 +20,26 @@ router.get('/', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+});
+
+router.post('/create-checkout-session', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        price: 'price_1KaWP8DT393wRvxWYgEoTnOv',
+        quantity: 1,
+      },
+      {
+        price: 'price_1KaTXwDT393wRvxWAah2oY1Z',
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: 'http://google.com',
+    cancel_url: 'http://google.com',
+  });
+
+  res.redirect(303, session.url);
 });
 
 router.get('/login', (req, res) => {
