@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Shoe, User, CartItem } = require('../models');
+
 const stripe = require('stripe')(
   'sk_test_51KYkduDT393wRvxW2rJP7fKH7P7eZk3WEi2w4mt4vcK2N8pCuovVnd63lNBoAQQw17cpiRLAj5ExVooEVzhcMzab00m10g4G9X'
 );
@@ -45,8 +46,8 @@ router.post('/create-checkout-session', async (req, res) => {
     line_items: shoes,
     mode: 'payment',
     allow_promotion_codes: true,
-    success_url: 'https://sneakies-r-us.herokuapp.com/',
-    cancel_url: 'https://sneakies-r-us.herokuapp.com/',
+    success_url: 'http://localhost:3002',
+    cancel_url: 'http://localhost:3002',
   });
   res.redirect(303, session.url);
 });

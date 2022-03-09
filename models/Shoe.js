@@ -34,9 +34,6 @@ Shoe.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    stripe_prod_id: {
-      type: DataTypes.STRING,
-    },
     price: {
       type: DataTypes.STRING,
     },

@@ -12,8 +12,7 @@ const shoeData = [
     brand: 'Adidas',
     year: '2019',
     filename: 'Alien.jpg',
-    stripe_prod_id: '',
-    price: '',
+    price: 'price_1KbIsNDT393wRvxWSM70EonW',
   },
   {
     name: 'Nike Air Max 1 Atmos Safari',
@@ -24,8 +23,7 @@ const shoeData = [
     brand: 'Nike',
     year: 2016,
     filename: 'AtmosSafari.jpg',
-    stripe_prod_id: 'prod_LH1bunB86Zy0A4',
-    price: 'price_1KaTXwDT393wRvxWAah2oY1Z',
+    price: 'price_1KbIslDT393wRvxWBNsg522o',
   },
   {
     name: 'Adidas Yeezy Boost 350 V2 Beluga 2.0',
@@ -38,8 +36,7 @@ const shoeData = [
     brand: 'Adidas',
     year: 2017,
     filename: 'Beluga2.jpg',
-    stripe_prod_id: 'prod_LH1bvRSEvkLJNm',
-    price: 'price_1KaTYKDT393wRvxWX8bF31Hm',
+    price: 'price_1KbIt6DT393wRvxWQcNwpFWI',
   },
   {
     name: 'New Balance 550 Shadow',
@@ -49,8 +46,7 @@ const shoeData = [
     brand: 'NewBalance',
     year: '2021',
     filename: 'Black550.jpg',
-    stripe_prod_id: '',
-    price: '',
+    price: 'price_1KbIucDT393wRvxW0fFdycDB',
   },
   {
     name: 'Air Jordan 6 Retro Carmine',
@@ -65,8 +61,7 @@ const shoeData = [
     brand: 'Jordan',
     year: '2021',
     filename: 'Carmines.jpg',
-    stripe_prod_id: '',
-    price: '',
+    price: 'price_1KbIvADT393wRvxW2XsPBbri',
   },
   {
     name: 'Air Jordan 13 Retro Flint',
@@ -78,8 +73,7 @@ const shoeData = [
     brand: 'Jordan',
     year: '2020',
     filename: 'Flint.jpg',
-    stripe_prod_id: '',
-    price: '',
+    price: 'price_1KbIvcDT393wRvxWC7rQuvko',
   },
   {
     name: 'Air Jordan 1 Retro High OG Light Fusion Red',
@@ -89,8 +83,7 @@ const shoeData = [
     brand: 'Jordan',
     year: '2021',
     filename: 'Fusion.jpg',
-    stripe_prod_id: '',
-    price: '',
+    price: 'price_1KbIvxDT393wRvxWcH16edIR',
   },
   {
     name: 'Air Jordan 6 Retro Gold Hoops',
@@ -101,8 +94,7 @@ const shoeData = [
     brand: 'Jordan',
     year: '2021',
     filename: 'Hoops.jpg',
-    stripe_prod_id: '',
-    price: '',
+    price: 'price_1KbIwQDT393wRvxWweMrCzNQ',
   },
   {
     name: 'New Balance 990v3 x JJJJound',
@@ -114,8 +106,7 @@ const shoeData = [
     brand: 'NewBalance',
     year: '2022',
     filename: 'JJJJound.jpg',
-    stripe_prod_id: '',
-    price: '',
+    price: 'price_1KbIwmDT393wRvxWbV2GoPgu',
   },
   {
     name: 'Air Jordan 1 x SB LA to Chicago',
@@ -126,7 +117,6 @@ const shoeData = [
     brand: 'Jordan',
     year: 2019,
     filename: 'LaToChi.jpg',
-    stripe_prod_id: 'prod_LH1b5riJ3YG0uV',
     price: 'price_1KaTYjDT393wRvxWhswRyLW5',
   },
   {
@@ -139,7 +129,6 @@ const shoeData = [
     brand: 'Jordan',
     year: 2018,
     filename: 'OffWhiteUNC.jpg',
-    stripe_prod_id: 'prod_LH4VU1I5chJV4i',
     price: 'price_1KaWMODT393wRvxWQqj9g0oJ',
   },
   {
@@ -154,7 +143,6 @@ const shoeData = [
     brand: 'Nike',
     year: 2018,
     filename: 'ParraAM1.jpg',
-    stripe_prod_id: 'prod_LH4VdBkjQgYbPe',
     price: 'price_1KaWMkDT393wRvxWdXh9zY6X',
   },
   {
@@ -166,7 +154,6 @@ const shoeData = [
     brand: 'Jordan',
     year: 2018,
     filename: 'ROTY.jpg',
-    stripe_prod_id: 'prod_LH4WdetYfXeysQ',
     price: 'price_1KaWN8DT393wRvxWyj3DCHEI',
   },
   {
@@ -179,8 +166,7 @@ const shoeData = [
     brand: 'Jordan',
     year: '2020',
     filename: 'RoyalToe.jpg',
-    stripe_prod_id: '',
-    price: '',
+    price: 'price_1KbIxFDT393wRvxWGdTQITfs',
   },
   {
     name: 'Air Jordan 1 Shattered Backboard',
@@ -192,7 +178,6 @@ const shoeData = [
     brand: 'Jordan',
     year: 2015,
     filename: 'SBB.jpg',
-    stripe_prod_id: 'prod_LH4WWqDUBMghbY',
     price: 'price_1KaWNVDT393wRvxWLW6ULrgi',
   },
   {
@@ -204,8 +189,7 @@ const shoeData = [
     brand: 'Jordan',
     year: '2021',
     filename: 'Seafoam.jpg',
-    stripe_prod_id: '',
-    price: '',
+    price: 'price_1KbIxaDT393wRvxW8p4vywnz',
   },
   {
     name: 'Nike x Stussy Air Zoom Spiridon Fossil',
@@ -218,7 +202,6 @@ const shoeData = [
     brand: 'Nike',
     year: 2020,
     filename: 'Spiridon.jpg',
-    stripe_prod_id: 'prod_LH4WFJZC6hq36g',
     price: 'price_1KaWNtDT393wRvxWYVKwtWov',
   },
   {
@@ -230,7 +213,6 @@ const shoeData = [
     brand: 'Adidas',
     year: 2018,
     filename: 'Static.jpg',
-    stripe_prod_id: 'prod_LH4XuALinWdmfD',
     price: 'price_1KaWOFDT393wRvxWLM0Yjlas',
   },
   {
@@ -243,7 +225,6 @@ const shoeData = [
     brand: 'Nike',
     year: 2021,
     filename: 'SupAF1.jpg',
-    stripe_prod_id: 'prod_LH4YJxZbpzzfsC',
     price: 'price_1KaWP8DT393wRvxWYgEoTnOv',
   },
   {
@@ -255,8 +236,7 @@ const shoeData = [
     brand: 'Nike',
     year: '2016',
     filename: 'SupAM98.jpg',
-    stripe_prod_id: '',
-    price: '',
+    price: 'price_1KbIyADT393wRvxWDUIXZPxN',
   },
   {
     name: 'Air Jordan 4 Retro x Travis Scott Cactus Jack',
@@ -269,8 +249,7 @@ const shoeData = [
     brand: 'Jordan',
     year: '2018',
     filename: 'Travis.jpg',
-    stripe_prod_id: '',
-    price: '',
+    price: 'price_1KbIyVDT393wRvxW68nLAxFw',
   },
   {
     name: 'New Balance 550 UNC White University Blue',
@@ -283,8 +262,7 @@ const shoeData = [
     brand: 'NewBalance',
     year: '2022',
     filename: 'UNC550.jpg',
-    stripe_prod_id: '',
-    price: '',
+    price: 'price_1KbIzSDT393wRvxWn5UoUXni',
   },
   {
     name: 'Adidas Yeezy Boost 700 Wave Runner',
@@ -298,7 +276,6 @@ const shoeData = [
     brand: 'Adidas',
     year: 2017,
     filename: 'WaveRunner.jpg',
-    stripe_prod_id: 'prod_LH4YfvwJsANcdE',
     price: 'price_1KaWPTDT393wRvxW1VNawTZB',
   },
   {
@@ -313,7 +290,6 @@ const shoeData = [
     brand: 'Adidas',
     year: 2017,
     filename: 'Zebras.jpg',
-    stripe_prod_id: 'prod_LH4YxhkXPvDHTv',
     price: 'price_1KaWPrDT393wRvxW9KJe2SF6',
   },
 ];
