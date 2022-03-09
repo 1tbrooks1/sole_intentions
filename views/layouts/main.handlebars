@@ -26,7 +26,16 @@
       <nav>
         <a href='/'><i class='no-style fas fa-home fa-2x px-4 icon'></i></a>
         {{#if loggedIn}}
-        <a href='/api/shoe/cart'><i class='no-style fas fa-shopping-cart fa-2x px-4 icon'></i></a>
+          {{#if cartItems.length}}
+          <button type="button" class="btn no-style position-relative" onclick="window.location.href='/api/shoe/cart'">
+            <i class='no-style fas fa-shopping-cart fa-2x px-4 icon'></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              {{cartItems.length}}
+            </span>
+          </button>
+          {{else}}
+          <a href='/api/shoe/cart'><i class='no-style fas fa-shopping-cart fa-2x px-4 icon'></i></a>
+          {{/if}}
         <button id='logout' class='no-style'><i class='fas fa-sign-out-alt fa-2x px-4 icon'></i></button>
         {{else}}
         <button type='button' class='no-style' data-toggle='modal' data-target='#exampleModal'>
