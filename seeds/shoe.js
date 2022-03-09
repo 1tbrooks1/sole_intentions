@@ -9,6 +9,7 @@ const shoeData = [
     but upon release it was given its own name. This 380 Alien features a never before seen Primeknit 
     pattern on its upper and lacks the traditional lateral side strip. An upgraded thicker Boost midsole 
     and engineered outsole grip complete the design.`,
+    brand: 'Adidas',
     year: '2019',
     filename: 'Alien.jpg',
     stripe_prod_id: '',
@@ -45,6 +46,7 @@ const shoeData = [
     price: 115,
     description: `The New Balance 550 Shadow features a black and grey leather upper with mesh paneling around the collars. 
     A puffed New Balance logo and "550" branding on the quarter panels nods to the origins of New Balance's basketball line.`,
+    brand: 'New Balance',
     year: '2021',
     filename: 'Black550.jpg',
     stripe_prod_id: '',
@@ -60,6 +62,7 @@ const shoeData = [
     model pop while on foot. From there, the upper is met with a white and black midsole, with hits of an icy blue 
     outsole appear as well. The final touch to this OG’s return is the signature “Nike Air” on the heel, replacing 
     2008 and 2012 retros’ “Jumpman” logo.`,
+    brand: 'Jordan',
     year: '2021',
     filename: 'Carmines.jpg',
     stripe_prod_id: '',
@@ -72,6 +75,7 @@ const shoeData = [
     reintroduced. This Jordan 13 Retro consists of a navy mesh and white leather upper with flint grey suede underlays. 
     A Jumpman holograph on the ankle, 3M detailing throughout the upper, and Carolina blue branding on the tongue completes 
     the design.`,
+    brand: 'Jordan',
     year: '2020',
     filename: 'Flint.jpg',
     stripe_prod_id: '',
@@ -82,6 +86,7 @@ const shoeData = [
     price: 160,
     description: `The Air Jordan 1 Light Fusion Red features a white leather upper with Light Fusion Red overlays and 
     Laser Orange on the Swoosh and ankle wrap. A woven Nike label stitched atop the tongue completes the design.`,
+    brand: 'Jordan',
     year: '2021',
     filename: 'Fusion.jpg',
     stripe_prod_id: '',
@@ -93,6 +98,7 @@ const shoeData = [
     description: `The women's Air Jordan 6 Gold Hoops (W) draws inspiration from gold hoop earrings and their allure. 
     Its design is composed of a white tumbled leather upper with hints of pale pink on the tongue. From there, interconnected 
     gold hoops and Jumpman emblems are attached to the shoe’s signature lace lock`,
+    brand: 'Jordan',
     year: '2021',
     filename: 'Hoops.jpg',
     stripe_prod_id: '',
@@ -105,6 +111,7 @@ const shoeData = [
     Arriving with olive mesh and premium suede uppers, the New Balance 990v3 JJJJound Olive uses a minimalist approach to create 
     a shoe geared for everyday wear. Black New Balance logos and overlays bring sharp contrast to the tonal green background. A silver 
     reflective heel wrap with JJJJound branding adds a custom touch. From there, a cream ENCAP sole at the base completes the design.`,
+    brand: 'New Balance',
     year: '2022',
     filename: 'JJJJound.jpg',
     stripe_prod_id: '',
@@ -169,6 +176,7 @@ const shoeData = [
     (which released in 1985) and adds design elements of the Black Toe 1 to create a familiar, 
     but new dialogue. This AJ 1 features a white and royal leather upper with black leather overlays 
     and detailing. A white midsole, royal outsole, and branded leather tongue tag completes this design.`,
+    brand: 'Jordan',
     year: '2020',
     filename: 'RoyalToe.jpg',
     stripe_prod_id: '',
@@ -193,6 +201,7 @@ const shoeData = [
     description: `The women's Air Jordan 1 High Seafoam (W) arrives in a smooth white leather 
     construction with Seafoam Durabuck overlays and Swooshes. On the laces, crisp bronze trimming 
     stands out against the design's subtle coloration.`,
+    brand: 'Jordan',
     year: '2021',
     filename: 'Seafoam.jpg',
     stripe_prod_id: '',
@@ -243,6 +252,7 @@ const shoeData = [
     description: `The Supreme x Air Max 98 'Snakeskin' puts snakeskin detailing on its overlays. 
     The rest of the shoe incorporates a metallic silver mesh with reflective piping, while the 
     heel tab and toe sport Supreme branding, with 'World Famous' across the heels.`,
+    brand: 'Nike',
     year: '2016',
     filename: 'SupAM98.jpg',
     stripe_prod_id: '',
@@ -256,6 +266,7 @@ const shoeData = [
     Oxford shape is presented in white to show off its OG shapes and style, complete with a 
     padded “N” emblem on the mid-panel alongside old-school branding on the tongue, “NB” emblems 
     on the rear, and “550” gracing the vamp.`,
+    brand: 'New Balance',
     year: '2022',
     filename: 'UNC550.jpg',
     stripe_prod_id: '',
