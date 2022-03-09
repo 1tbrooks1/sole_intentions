@@ -4,12 +4,12 @@ const CartItem = require('./CartItem');
 
 CartItem.belongsTo(Shoe, {
   foreignKey: 'shoe_id',
-  constraints: none
+  foreignKeyConstraint: none
 });
 
 Shoe.hasMany(CartItem, {
   foreignKey: 'shoe_id',
-  constraints: none
+  foreignKeyConstraint: none
 });
 
 module.exports = { User, Shoe, CartItem };
