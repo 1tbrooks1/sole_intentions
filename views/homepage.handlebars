@@ -1,15 +1,15 @@
 <hero class='hero m-4'>
     <h1 class="grab text-dark">Oh Snap!</h1>
-    <p class="promo bg-dark p-5 text-center">
-        Get FREE SHIPPING on any order now through 03/31/2022 </br>
-        Use PROMO Code: SHIPSNEAKIES at checkout!
+    <p class="promo bg-dark p-lg-5 p-1 text-center">
+        Get 10% off any order now through 03/31/2022 </br>
+        Use PROMO Code: SHOPSNEAKIES at checkout!
     </p>
     <p class="barcode text-dark">SHOP SMALL. SHOP SOLE INTENTIONS.</p>
 </hero>
 
-<div class="container-fluid m-4 home-text">
+<div class="container-md-fluid m-4 main-font">
     <div class="row justify-content-between">
-        <div class="col-md-2 border rounded p-3">
+        <div class="col-lg-2 ms-lg-4 border rounded p-3">
             <h2>Filter By:</h2>
             <div class="dropdown filterBrand">
                 <button class="btn btn-secondary m-1 p-1 col-12 dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -82,9 +82,9 @@
             </div>
         </div>
         <div class="col-md-9 me-5">
-            <div class="row justify-content-between">
+            <div class="row justify-content-around">
                 {{#each shoes}}
-                <div class="card p-0 mb-3 mx-4 col-md-2 shoe-body">
+                <div class="card p-0 mb-3 mx-2 mx-md-4 mt-3 col-5 col-md-3 col-lg-2 shoe-body">
                     <img class="card-img-top" src="/images/{{this.filename}}">
                     <div class="card-body px-1">
                         <h2 class="card-title shoe-name text-dark">{{this.name}}</h2>
