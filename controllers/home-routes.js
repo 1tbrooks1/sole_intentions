@@ -44,10 +44,10 @@ router.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: shoes,
     mode: 'payment',
+    allow_promotion_codes: true,
     success_url: 'https://sneakies-r-us.herokuapp.com/',
     cancel_url: 'https://sneakies-r-us.herokuapp.com/',
   });
-
   res.redirect(303, session.url);
 });
 
