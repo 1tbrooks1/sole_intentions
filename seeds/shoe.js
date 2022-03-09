@@ -46,7 +46,7 @@ const shoeData = [
     price: 115,
     description: `The New Balance 550 Shadow features a black and grey leather upper with mesh paneling around the collars. 
     A puffed New Balance logo and "550" branding on the quarter panels nods to the origins of New Balance's basketball line.`,
-    brand: 'New Balance',
+    brand: 'NewBalance',
     year: '2021',
     filename: 'Black550.jpg',
     stripe_prod_id: '',
@@ -111,7 +111,7 @@ const shoeData = [
     Arriving with olive mesh and premium suede uppers, the New Balance 990v3 JJJJound Olive uses a minimalist approach to create 
     a shoe geared for everyday wear. Black New Balance logos and overlays bring sharp contrast to the tonal green background. A silver 
     reflective heel wrap with JJJJound branding adds a custom touch. From there, a cream ENCAP sole at the base completes the design.`,
-    brand: 'New Balance',
+    brand: 'NewBalance',
     year: '2022',
     filename: 'JJJJound.jpg',
     stripe_prod_id: '',
@@ -266,7 +266,7 @@ const shoeData = [
     Oxford shape is presented in white to show off its OG shapes and style, complete with a 
     padded “N” emblem on the mid-panel alongside old-school branding on the tongue, “NB” emblems 
     on the rear, and “550” gracing the vamp.`,
-    brand: 'New Balance',
+    brand: 'NewBalance',
     year: '2022',
     filename: 'UNC550.jpg',
     stripe_prod_id: '',
