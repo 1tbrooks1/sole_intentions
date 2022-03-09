@@ -259,6 +259,20 @@ const shoeData = [
     stripe_price_id: '',
   },
   {
+    name: 'Air Jordan 4 Retro x Travis Scott Cactus Jack',
+    price: '1000',
+    description: `The only way to describe the Travis Scott Air Jordan 4 Retros properly would be 
+    to use the rappers own adlib: la flame. These Jordan 4s were made in collaboration with rapper, 
+    Travis Scott and nicknamed the "Cactus Jack" edition. Similar in design to the infamous Eminem pair, 
+    these feature a lighter shade of blue suede on the upper. Black accents, a red liner, paint splatter 
+    detailing, a white midsole and "Cactus Jack" branding on the back heel tab finish things off for this pair.`,
+    brand: 'Jordan',
+    year: '2018',
+    filename: 'Travis.jpg',
+    stripe_prod_id: '',
+    stripe_price_id: '',
+  },
+  {
     name: 'New Balance 550 UNC White University Blue',
     price: 175,
     description: `New Balance has a handful of firm favorites among the sneakerhead community, 
