@@ -5,7 +5,7 @@ const { Shoe, CartItem, User } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
-      attributes: ['id', 'name', 'price', 'filename', 'in_cart'],
+      attributes: ['id', 'name', 'our_price', 'filename'],
     });
     res.json(dbShoeData);
   } catch (err) {
@@ -23,7 +23,7 @@ router.get('/cart', async (req, res) => {
       include: [
         {
           model: Shoe,
-          attributes: ['id', 'price', 'name', 'filename', 'stripe_price_id'],
+          attributes: ['id', 'our_price', 'name', 'filename', 'price'],
         },
       ],
     });
@@ -49,7 +49,7 @@ router.get('/:brand', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
       where: { brand: req.params.brand },
-      attributes: ['id', 'price', 'name', 'filename'],
+      attributes: ['id', 'our_price', 'name', 'filename'],
     });
     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
     res.render('homepage', {
@@ -68,7 +68,7 @@ router.get('/:id', async (req, res) => {
       where: {
         id: req.params.id,
       },
-      attributes: ['id', 'name', 'price', 'filename', 'description'],
+      attributes: ['id', 'name', 'our_price', 'filename', 'description'],
     });
     res.json(dbShoeData);
   } catch (err) {

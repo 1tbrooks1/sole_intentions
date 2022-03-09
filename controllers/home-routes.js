@@ -8,7 +8,7 @@ const stripe = require('stripe')(
 router.get('/', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
-      attributes: ['id', 'name', 'price', 'filename'],
+      attributes: ['id', 'name', 'our_price', 'filename'],
     });
     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
 
@@ -35,25 +35,17 @@ router.post('/create-checkout-session', async (req, res) => {
     where: {
       id: shoeIds,
     },
-    attributes: ['id', 'stripe_price_id'],
+    attributes: ['price'],
   });
   const shoes = shoeData.map((shoe) => shoe.get({ plain: true }));
-  console.log(shoes);
-  // ^^^ THIS IS THE STRIPE PRICE ID OF EACH SHOE IN THE CART THAT WE JUST NEEED TO PLUG INTO THE LINE ITEMS BELOW
+  shoes.forEach((shoe) => {
+    shoe.quantity = 1;
+  });
   const session = await stripe.checkout.sessions.create({
-    line_items: [
-      {
-        price: 'price_1KaWP8DT393wRvxWYgEoTnOv',
-        quantity: 1,
-      },
-      {
-        price: 'price_1KaTXwDT393wRvxWAah2oY1Z',
-        quantity: 1,
-      },
-    ],
+    line_items: shoes,
     mode: 'payment',
-    success_url: 'http://google.com',
-    cancel_url: 'http://google.com',
+    success_url: 'https://sneakies-r-us.herokuapp.com/',
+    cancel_url: 'https://sneakies-r-us.herokuapp.com/',
   });
 
   res.redirect(303, session.url);
@@ -72,7 +64,7 @@ router.get('/limit=8', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
       limit: 8,
-      attributes: ['id', 'price', 'name', 'filename'],
+      attributes: ['id', 'our_price', 'name', 'filename'],
     });
     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
     res.render('homepage', {
@@ -89,7 +81,7 @@ router.get('/limit=12', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
       limit: 12,
-      attributes: ['id', 'price', 'name', 'filename'],
+      attributes: ['id', 'our_price', 'name', 'filename'],
     });
     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
     res.render('homepage', {
@@ -106,7 +98,7 @@ router.get('/limit=24', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
       limit: 24,
-      attributes: ['id', 'price', 'name', 'filename'],
+      attributes: ['id', 'our_price', 'name', 'filename'],
     });
     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
     res.render('homepage', {
@@ -122,8 +114,8 @@ router.get('/limit=24', async (req, res) => {
 router.get('/sort=priceDesc', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
-      order: [['price', 'DESC']],
-      attributes: ['id', 'name', 'price', 'filename'],
+      order: [['our_price', 'DESC']],
+      attributes: ['id', 'name', 'our_price', 'filename'],
     });
     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
 
@@ -140,8 +132,8 @@ router.get('/sort=priceDesc', async (req, res) => {
 router.get('/sort=priceAsc', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
-      order: [['price', 'ASC']],
-      attributes: ['id', 'name', 'price', 'filename'],
+      order: [['our_price', 'ASC']],
+      attributes: ['id', 'name', 'our_price', 'filename'],
     });
     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
 
@@ -159,7 +151,7 @@ router.get('/sort=yearDesc', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
       order: [['year', 'DESC']],
-      attributes: ['id', 'name', 'price', 'filename'],
+      attributes: ['id', 'name', 'our_price', 'filename'],
     });
     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
 
@@ -177,7 +169,7 @@ router.get('/sort=yearAsc', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
       order: [['year', 'ASC']],
-      attributes: ['id', 'name', 'price', 'filename'],
+      attributes: ['id', 'name', 'our_price', 'filename'],
     });
     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
 
@@ -195,7 +187,7 @@ router.get('/:year', async (req, res) => {
   try {
     const dbShoeData = await Shoe.findAll({
       where: { year: req.params.year },
-      attributes: ['id', 'price', 'name', 'filename', 'year'],
+      attributes: ['id', 'our_price', 'name', 'filename', 'year'],
     });
     const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
     res.render('homepage', {
@@ -214,7 +206,14 @@ router.get('/shoe/:id', async (req, res) => {
       where: {
         id: req.params.id,
       },
-      attributes: ['id', 'name', 'price', 'filename', 'description', 'year'],
+      attributes: [
+        'id',
+        'name',
+        'our_price',
+        'filename',
+        'description',
+        'year',
+      ],
     });
     const shoe = dbShoeData.get({ plain: true });
     res.render('single-item', {

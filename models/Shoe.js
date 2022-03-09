@@ -15,7 +15,7 @@ Shoe.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    price: {
+    our_price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
@@ -37,7 +37,7 @@ Shoe.init(
     stripe_prod_id: {
       type: DataTypes.STRING,
     },
-    stripe_price_id: {
+    price: {
       type: DataTypes.STRING,
     },
   },
