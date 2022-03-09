@@ -24,13 +24,13 @@
         <a class='title text-white' href='/' style='text-decoration: none;'>Sole Intentions</a>
       </h1>
       <nav>
-        <a href='/'><i class='no-style fas fa-home fa-2x px-4'></i></a>
+        <a href='/'><i class='no-style fas fa-home fa-2x px-4 icon'></i></a>
         {{#if loggedIn}}
-        <a href='/api/shoe/cart'><i class='no-style fas fa-shopping-cart fa-2x px-4'></i></a>
-        <button id='logout' class='no-style'><i class='fas fa-sign-out-alt fa-2x px-4'></i></button>
+        <a href='/api/shoe/cart'><i class='no-style fas fa-shopping-cart fa-2x px-4 icon'></i></a>
+        <button id='logout' class='no-style'><i class='fas fa-sign-out-alt fa-2x px-4 icon'></i></button>
         {{else}}
         <button type='button' class='no-style' data-toggle='modal' data-target='#exampleModal'>
-          <i class='fas fa-shopping-cart fa-2x px-4'></i>
+          <i class='fas fa-shopping-cart fa-2x px-4 icon'></i>
         </button>
         <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel'
           aria-hidden='true'>
@@ -53,7 +53,7 @@
             </div>
           </div>
         </div>
-        <a href='/login'><i class='no-style fas fa-solid fa-user fa-2x px-4'></i></a>
+        <a href='/login'><i class='no-style fas fa-solid fa-user fa-2x px-4 icon'></i></a>
         {{/if}}
       </nav>
     </header>

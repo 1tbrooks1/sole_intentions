@@ -15,7 +15,11 @@ header {
 
 .title {
     font-family: "racing sans one", cursive;
-    font-size: 50px;
+    font-size: 3vw;
+}
+
+.icon {
+    font-size: 2vw;
 }
 
 .no-style {
@@ -32,52 +36,40 @@ header {
 
 .hero {
     background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('../images/hero-img.png');
-    height: 400px;
+    height: 25vw;
     background-size: cover;
     background-position: center;
     position: relative;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
 }
 
 .grab {
     font-family: "racing sans one", cursive;
-    font-size: 100px;
+    font-size: 5vw;
 }
 
 .promo {
     font-family: var(--primary-font);
-    font-size: 20px;
+    font-size: 1vw;
     color: white
 }
 
 .barcode {
     font-family: "Libre Barcode 128 Text", cursive;
-    font-size: 40px;
+    font-size: 2vw;
 }
 
 .single-shoe {
     max-width: 100%;
 }
 
-.single-font {
+.main-font {
     font-family: var(--primary-font);
 }
 
-.home-text {
-    font-family: var(--primary-font);
-}
-
-.form-font {
-    font-family: var(--primary-font);
-}
-
-.cart-font {
-    font-family: var(--primary-font);
-}
 
 .shoe-body {
     font-size: 15px;
@@ -93,4 +85,10 @@ footer {
     border-top: 1px solid #ccc;
     display: flex;
     justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .icon {
+        font-size: 5vw;
+    }
 }
