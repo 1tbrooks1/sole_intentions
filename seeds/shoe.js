@@ -16,7 +16,7 @@ const shoeData = [
   },
   {
     name: 'Nike Air Max 1 Atmos Safari',
-    our_price: 610,
+    our_price: 615,
     description: `The Atmos x Air Max 1 'Safari' is a 2016 re-release of a classic 2002 collaboration 
         with Japanese brand Atmos. The reissue features the same color-blocking as the original but swaps 
         out the 2002s canvas toe box and gum sole for a hairy suede toe box and ice-blue translucent sole.`,
