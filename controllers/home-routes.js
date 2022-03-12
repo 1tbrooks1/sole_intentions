@@ -46,8 +46,8 @@ router.post('/create-checkout-session', async (req, res) => {
     line_items: shoes,
     mode: 'payment',
     allow_promotion_codes: true,
-    success_url: 'https://sneakies-r-us.herokuapp.com/',
-    cancel_url: 'https://sneakies-r-us.herokuapp.com/',
+    success_url: 'https://sneakies-r-us.herokuapp.com/success',
+    cancel_url: 'https://sneakies-r-us.herokuapp.com/cancel',
   });
   res.redirect(303, session.url);
 });
