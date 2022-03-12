@@ -3,7 +3,7 @@ const { Shoe } = require('../models');
 const shoeData = [
   {
     name: 'Adidas Yeezy Boost 380 Alien',
-    our_price: 310,
+    our_price: 315,
     description: `Yeezy has introduced a new silhouette to their product line with the adidas Yeezy Boost 
     380 Alien, now available on StockX. This model was originally known to be the Yeezy Boost 350 V3, 
     but upon release it was given its own name. This 380 Alien features a never before seen Primeknit 
