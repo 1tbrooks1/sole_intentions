@@ -20,10 +20,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/success', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/html/success.html'));
-});
-
 router.post('/create-checkout-session', async (req, res) => {
   const cartData = await CartItem.findAll({
     where: {
@@ -47,7 +43,7 @@ router.post('/create-checkout-session', async (req, res) => {
     line_items: shoes,
     mode: 'payment',
     allow_promotion_codes: true,
-    success_url: 'https://soleintentions.herokuapp.com/success',
+    success_url: 'https://soleintentions.herokuapp.com',
     cancel_url: 'https://soleintentions.herokuapp.com',
   });
   res.redirect(303, session.url);
