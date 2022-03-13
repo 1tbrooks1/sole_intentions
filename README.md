@@ -1,4 +1,6 @@
-# Interactive Full Stack Project: Sole Intentions E-Commerce
+# Sole Intentions E-Commerce
+
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## User Story
 ```
