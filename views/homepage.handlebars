@@ -1,0 +1,92 @@
+<hero class='hero m-4'>
+    <h1 class="grab text-dark">Oh Snap!</h1>
+    <p class="promo bg-dark p-lg-5 p-1 text-center">
+        Get 10% off any order now through 03/31/2022 </br>
+        Use PROMO Code: SHOPSNEAKIES at checkout!
+    </p>
+    <p class="barcode text-dark">SHOP SMALL. SHOP SOLE INTENTIONS.</p>
+</hero>
+
+<div class="container-md-fluid m-4 main-font">
+    <div class="row justify-content-between">
+        <div class="col-lg-2 ms-lg-4 border rounded p-3">
+            <h2>Filter By:</h2>
+            <div class="dropdown filterBrand">
+                <button class="btn btn-secondary m-1 p-1 col-12 dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Brand
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="/api/shoe/adidas">Adidas</a></li>
+                    <li><a class="dropdown-item" href="/api/shoe/jordan">Jordan</a></li>
+                    <li><a class="dropdown-item" href="/api/shoe/newbalance">New Balance</a></li>
+                    <li><a class="dropdown-item" href="/api/shoe/nike">Nike</a></li>
+                </ul>
+            </div> 
+            <div class="dropdown filterYear">
+                <button class="btn btn-secondary m-1 p-1 col-12 dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Release Year
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="/2015">2015</a></li>
+                    <li><a class="dropdown-item" href="/2016">2016</a></li>
+                    <li><a class="dropdown-item" href="/2017">2017</a></li>
+                    <li><a class="dropdown-item" href="/2018">2018</a></li>
+                    <li><a class="dropdown-item" href="/2019">2019</a></li>
+                    <li><a class="dropdown-item" href="/2020">2020</a></li>
+                    <li><a class="dropdown-item" href="/2021">2021</a></li>
+                    <li><a class="dropdown-item" href="/2022">2022</a></li>
+                </ul>
+            </div> 
+            <h2 class="mt-3">Sort By:</h2>
+            <div class="form-check ms-3 p-1">
+                <input class="form-check-input" type="radio" name="radioSort" id="priceHighLow" onclick="window.location.href='/sort=priceDesc'">
+                <label class="form-check-label" for="priceHighLow">
+                    Price: High to Low
+                </label>
+            </div>
+            <div class="form-check ms-3 p-1">
+                <input class="form-check-input" type="radio" name="radioSort" id="priceLowHigh" onclick="window.location.href='/sort=priceAsc'">
+                <label class="form-check-label" for="priceLowHigh">
+                    Price: Low to High
+                </label>
+            </div>
+            <div class="form-check ms-3 p-1">
+                <input class="form-check-input" type="radio" name="radioSort" id="dateHighLow" onclick="window.location.href='/sort=yearDesc'">
+                <label class="form-check-label" for="dateHighLow">
+                    Release Date: High to Low
+                </label>
+            </div>
+            <div class="form-check ms-3 p-1">
+                <input class="form-check-input" type="radio" name="radioSort" id="dateLowHigh" onclick="window.location.href='/sort=yearAsc'">
+                <label class="form-check-label" for="dateLowHigh">
+                    Release Date: Low to High
+                </label>
+            </div>
+            <div class="form-check ms-3 p-1">
+                <input class="form-check-input" type="radio" name="radioSort" id="noFilter" onclick="window.location.href='/'">
+                <label class="form-check-label" for="noFilter">
+                    None
+                </label>
+            </div>
+        </div>
+        <div class="col-md-9 me-5">
+            <div class="row justify-content-around">
+                {{#each shoes}}
+                <div class="card p-0 mb-3 mx-2 mx-md-4 mt-3 col-5 col-md-3 col-lg-2 shoe-body">
+                    <img class="card-img-top" src="/images/{{this.filename}}">
+                    <div class="card-body px-1">
+                        <h2 class="card-title shoe-name text-dark">{{this.name}}</h2>
+                        <p class="card-text text-muted">${{this.our_price}}</p>
+                    </div>
+                    <div class="card-footer p-1">
+                        <a class="text-dark" href="/shoe/{{this.id}}">See More <i
+                                class="fas fa-angle-double-right"></i></a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
