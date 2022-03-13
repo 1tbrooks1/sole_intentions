@@ -1,10 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Shoe, User, CartItem } = require('../models');
-
-const stripe = require('stripe')(
-  'sk_test_51KYkduDT393wRvxW2rJP7fKH7P7eZk3WEi2w4mt4vcK2N8pCuovVnd63lNBoAQQw17cpiRLAj5ExVooEVzhcMzab00m10g4G9X'
-);
+const stripe = require('../config/stripe');
+const { Shoe, CartItem } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
@@ -21,6 +18,10 @@ router.get('/', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+});
+
+router.get('/success', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/html/success.html'));
 });
 
 router.post('/create-checkout-session', async (req, res) => {
@@ -46,8 +47,8 @@ router.post('/create-checkout-session', async (req, res) => {
     line_items: shoes,
     mode: 'payment',
     allow_promotion_codes: true,
-    success_url: 'http://localhost:3002',
-    cancel_url: 'http://localhost:3002',
+    success_url: 'https://soleintentions.herokuapp.com/success',
+    cancel_url: 'https://soleintentions.herokuapp.com',
   });
   res.redirect(303, session.url);
 });
@@ -59,57 +60,6 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
-});
-
-router.get('/limit=8', async (req, res) => {
-  try {
-    const dbShoeData = await Shoe.findAll({
-      limit: 8,
-      attributes: ['id', 'our_price', 'name', 'filename'],
-    });
-    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
-    res.render('homepage', {
-      shoes,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-router.get('/limit=12', async (req, res) => {
-  try {
-    const dbShoeData = await Shoe.findAll({
-      limit: 12,
-      attributes: ['id', 'our_price', 'name', 'filename'],
-    });
-    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
-    res.render('homepage', {
-      shoes,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-router.get('/limit=24', async (req, res) => {
-  try {
-    const dbShoeData = await Shoe.findAll({
-      limit: 24,
-      attributes: ['id', 'our_price', 'name', 'filename'],
-    });
-    const shoes = dbShoeData.map((shoe) => shoe.get({ plain: true }));
-    res.render('homepage', {
-      shoes,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
 });
 
 router.get('/sort=priceDesc', async (req, res) => {
